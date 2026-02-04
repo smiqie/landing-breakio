@@ -1,0 +1,35 @@
+.form{
+    position: relative;
+    &__label{
+        position: absolute;
+        top: 13px;
+        left: 24px;
+        font-size: 24px;
+        line-height: 160%;
+        color: #475569;
+        transition: all .5s ease-in-out 0s;
+        user-select: none;
+        pointer-events: none;
+    }
+    &__input{
+        border: 1px solid #CBD5E1;
+        //width: 476px;
+        border-radius: 26px;
+        padding: 13px 24px;
+
+        font-size: 24px;
+        line-height: 160%;
+        color: #475569;
+
+        /*&:focus-visible{
+            outline: 1px solid rgb(0, 167, 218);
+            outline-offset: 4px;
+        }*/
+    }
+    &__input:not(:placeholder-shown) + label{
+        top: 73px;
+        left: 14px;
+        font-size: 18px;
+    }
+    
+}

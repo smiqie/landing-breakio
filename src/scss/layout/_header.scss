@@ -12,14 +12,7 @@
         letter-spacing: 0.5px;
     }
     &__button{
-        background-color: #C026D3;
-        color: #FFF;
-        border-radius: 18px;
-        padding: 12px 30px;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 0.5px;
-        border: none;
+        
     }
     &__nav-menu{
         display: flex;
@@ -32,29 +25,4 @@
     width: 1280px;
     margin-inline: auto;
     padding-inline: 80px;
-}
-.title{
-    font-size: 72px;
-    line-height: 110%;
-    background: linear-gradient(to right, #C026D3, #701A75);
-        background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    color: transparent;
-    animation-name: color-fill;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: backwards;
-    animation-iteration-count: infinite;
-}
-@keyframes color-fill{
-    0%{
-        background-position: top left;
-        background-size: 600% 80%;
-    }
-    100%{
-        background-position: 100% 50%;
-        
-    }
 }

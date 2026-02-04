@@ -1,0 +1,28 @@
+.button{
+    background-color: #C026D3;
+    border-radius: 18px;
+
+    padding: 12px 30px;
+
+    color: #FFF;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+
+    &--big{
+        border-radius: 26px;
+        padding: 20px 50px;
+        font-size: 24px;
+    }
+
+    &:hover{
+        background-color: #701A75;
+    }
+    &:focus-visible{
+        outline: 1px solid rgb(0, 167, 218);
+        outline-offset: 4px;
+    }
+    &:active{
+        background-color: #b83ac9;
+    }
+}

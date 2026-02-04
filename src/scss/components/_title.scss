@@ -1,0 +1,21 @@
+.title{
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    &__primary{
+        line-height: 110%;
+        font-size: 56px;
+        background: linear-gradient(to right, #C026D3, #701A75);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        &--big{
+            font-size: 72px;
+        }
+    }
+    &__secondary{
+        color: #475569;
+        line-height: 180%;
+        font-size: 20px;
+    }
+}

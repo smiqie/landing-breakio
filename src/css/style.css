@@ -314,6 +314,7 @@ template {
   margin: 0;
   padding: 0;
   list-style: none;
+  border: none;
 }
 
 h1, h2, h3 {
@@ -342,16 +343,6 @@ img {
   color: #0F172A;
   letter-spacing: 0.5px;
 }
-.header__button {
-  background-color: #C026D3;
-  color: #FFF;
-  border-radius: 18px;
-  padding: 12px 30px;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.5px;
-  border: none;
-}
 .header__nav-menu {
   display: flex;
   align-items: center;
@@ -364,28 +355,88 @@ img {
   padding-inline: 80px;
 }
 
+.button {
+  background-color: #C026D3;
+  border-radius: 18px;
+  padding: 12px 30px;
+  color: #FFF;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+.button--big {
+  border-radius: 26px;
+  padding: 20px 50px;
+  font-size: 24px;
+}
+.button:hover {
+  background-color: #701A75;
+}
+.button:focus-visible {
+  outline: 1px solid rgb(0, 167, 218);
+  outline-offset: 4px;
+}
+.button:active {
+  background-color: #b83ac9;
+}
+
 .title {
-  font-size: 72px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.title__primary {
   line-height: 110%;
+  font-size: 56px;
   background: linear-gradient(to right, #C026D3, #701A75);
   background-clip: text;
   -webkit-background-clip: text;
-  -moz-background-clip: text;
   color: transparent;
-  animation-name: color-fill;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: backwards;
-  animation-iteration-count: infinite;
+}
+.title__primary--big {
+  font-size: 72px;
+}
+.title__secondary {
+  color: #475569;
+  line-height: 180%;
+  font-size: 20px;
 }
 
-@keyframes color-fill {
-  0% {
-    background-position: top left;
-    background-size: 600% 80%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
+.form {
+  position: relative;
+}
+.form__label {
+  position: absolute;
+  top: 13px;
+  left: 24px;
+  font-size: 24px;
+  line-height: 160%;
+  color: #475569;
+  transition: all 0.5s ease-in-out 0s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+.form__input {
+  border: 1px solid #CBD5E1;
+  border-radius: 26px;
+  padding: 13px 24px;
+  font-size: 24px;
+  line-height: 160%;
+  color: #475569;
+  /*&:focus-visible{
+      outline: 1px solid rgb(0, 167, 218);
+      outline-offset: 4px;
+  }*/
+}
+.form__input:not(:-moz-placeholder) + label {
+  top: 73px;
+  left: 14px;
+  font-size: 18px;
+}
+.form__input:not(:placeholder-shown) + label {
+  top: 73px;
+  left: 14px;
+  font-size: 18px;
 }/*# sourceMappingURL=style.css.map */

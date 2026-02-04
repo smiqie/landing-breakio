@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
-    <title>Document</title>
+    <title>breakio</title>
 </head>
+
 <body>
     <header class="header">
         <div class="header__container container">
             <nav class="header__nav-menu">
-                <img src="./src/icons/logo.svg" alt="Logo" class="header__logo logo" title="Home" width="108" height="35">
+                <a href="./index.html" title="Home" class="header__logo logo">
+                    <img src="./src/icons/logo.svg" alt="Logo" class="logo__image" width="108" height="35">
+                </a>
                 <ul class="header__list">
                     <li class="header__item">
                         <a href="" class="header__link">Explore</a>
@@ -28,12 +32,30 @@
                         <a href="" class="header__link">Log In</a>
                     </li>
                     <li class="header__item">
-                        <button class="header__button button">Start Now</button>
+                        <button class="header__button button" type="button" title="Start Now">Start Now</button>
                     </li>
                 </ul>
             </nav>
-            <h1 class="header__title title">It’s time to take a break</h1>
         </div>
     </header>
+    <main class="main">
+        <section class="hero">
+            <div class="hero__container container">
+                <h1 class="hero__title title">
+                    <span class="title__primary title__primary--big">It's time to take a break</span>
+                    <span class="title__secondary">Build your meditation skills with an app that gives you all you
+                        need!</span>
+                </h1>
+
+                <form class="hero__form form">
+                    <input type="text" inputmode="text" id="name" name="user-name" class="form__input" placeholder="" required minlength="3" maxlength="20" >
+                    <label for="name" class="form__label">Enter your name</label>
+                </form>
+            </div>
+        </section>
+    </main>
+
+
 </body>
+
 </html>
