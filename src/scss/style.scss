@@ -1,6 +1,11 @@
+// BASE
 @import
     "./base/normalize",
     "./base/reset",
+    "./base/base";
+
+// LAYOUT
+@import
     "./layout/header";
 
 
@@ -8,4 +13,5 @@
 @import 
     "./components/button",
     "./components/title",
-    "./components/form";
+    "./components/form",
+    "./components/focus-ring";

@@ -12,27 +12,28 @@
     <header class="header">
         <div class="header__container container">
             <nav class="header__nav-menu">
-                <a href="./index.html" title="Home" class="header__logo logo">
+                <a href="./index.html" title="Home" class="header__logo logo focus-ring">
                     <img src="./src/icons/logo.svg" alt="Logo" class="logo__image" width="108" height="35">
                 </a>
                 <ul class="header__list">
                     <li class="header__item">
-                        <a href="" class="header__link">Explore</a>
+                        <a href="" class="header__link focus-ring">Explore</a>
                     </li>
                     <li class="header__item">
-                        <a href="" class="header__link">Solutions</a>
+                        <a href="" class="header__link focus-ring">Solutions</a>
                     </li>
                     <li class="header__item">
-                        <a href="" class="header__link">About</a>
+                        <a href="" class="header__link focus-ring">About</a>
                     </li>
                     <li class="header__item">
-                        <a href="" class="header__link">Blog</a>
+                        <a href="" class="header__link focus-ring">Blog</a>
                     </li>
                     <li class="header__item">
-                        <a href="" class="header__link">Log In</a>
+                        <a href="" class="header__link focus-ring">Log In</a>
                     </li>
                     <li class="header__item">
-                        <button class="header__button button" type="button" title="Start Now">Start Now</button>
+                        <button class="header__button button focus-ring" type="button" title="Start Now">Start
+                            Now</button>
                     </li>
                 </ul>
             </nav>
@@ -41,16 +42,29 @@
     <main class="main">
         <section class="hero">
             <div class="hero__container container">
-                <h1 class="hero__title title">
-                    <span class="title__primary title__primary--big">It's time to take a break</span>
-                    <span class="title__secondary">Build your meditation skills with an app that gives you all you
-                        need!</span>
-                </h1>
 
-                <form class="hero__form form">
-                    <input type="text" inputmode="text" id="name" name="user-name" class="form__input" placeholder="" required minlength="3" maxlength="20" >
-                    <label for="name" class="form__label">Enter your name</label>
-                </form>
+                <div class="hero__content-wrapper">
+                    
+                    <h1 class="hero__title title">
+                        <span class="title__primary title__primary--big">It's time to take a break</span>
+                        <span class="title__secondary">Build your meditation skills with an app that gives you all you
+                            need!</span>
+                    </h1>
+
+                    <div class="hero__form-wrapper">
+                        <form class="hero__form form">
+                            <input type="text" inputmode="text" id="name" name="user-name" class="form__input"
+                                placeholder="" required minlength="3" maxlength="20">
+                            <label for="name" class="form__label">Enter your name</label>
+                        </form>
+                        <button class="header__button button button--big focus-ring" type="submit"
+                            title="Start Now">Start Now</button>
+                    </div>
+                </div>
+
+                <img src="./src/images/hero-picture.png" alt="lol" class="hero__main-picture" title="lol" width="1280"
+                    height="465">
+
             </div>
         </section>
     </main>
