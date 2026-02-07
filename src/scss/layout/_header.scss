@@ -1,5 +1,6 @@
 .header{
     padding-block: 24px;
+    background-color: #FFF;
     &__list{
         display: flex;
         gap: 16px;
@@ -17,14 +18,3 @@
         justify-content: space-between;
     }
 }
-
-.container{
-    width: 1280px;
-    margin-inline: auto;
-    padding-inline: 80px;
-}
-
-
-/*
-
-*/

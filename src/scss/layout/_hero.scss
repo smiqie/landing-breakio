@@ -1,0 +1,19 @@
+.hero{
+    padding-block: 56px 80px;
+    background-color: #FFF;
+    // min-height
+    &__title{
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    &__form-wrapper{
+        display: flex;
+        column-gap: 16px;
+        margin-bottom: 80px;
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

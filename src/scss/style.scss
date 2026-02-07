@@ -1,12 +1,21 @@
+// VARIABLES
+@import "./abstracts/variables";
+
 // BASE
 @import
     "./base/normalize",
     "./base/reset",
-    "./base/base";
+    "./base/base",
+    "./base/utilities",
+    "./base/typography";
 
 // LAYOUT
 @import
-    "./layout/header";
+    "./layout/header",
+    "./layout/hero",
+    "./layout/intro",
+    "./layout/testimonials",
+    "./layout/feedback";
 
 
 // COMPONENTS
@@ -14,4 +23,7 @@
     "./components/button",
     "./components/title",
     "./components/form",
-    "./components/focus-ring";
+    "./components/focus-ring",
+    "./components/user-info",
+    "./components/slide",
+    "./components/slider";

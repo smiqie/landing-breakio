@@ -1,0 +1,30 @@
+.user-info {
+    //max-height: 300px;
+    // box-shadow
+    border-radius: 10px;
+    max-width: max-content;
+    box-shadow: 0px 0px 8px 0px rgb(34 60 80 / 0.4);
+    &__showcase{
+        border-radius: 10px;
+    }
+    &__profile {
+        display: flex;
+        column-gap: 8px;
+        font-weight: 400;
+        line-height: 140%;
+        padding: 16px;
+    }
+
+    &__work {
+        color: #0F172A;
+        font-size: 16px;
+    }
+
+    &__credit {
+        color: #0F172A;
+        font-size: 14px;
+    }
+
+
+    color: #475569;
+}

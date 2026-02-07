@@ -1,0 +1,17 @@
+.intro{
+    padding-block: 80px;
+    background-color: #FFF;
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title{
+        margin-bottom: 24px;
+        text-align: center;
+        max-width: 900px;
+    }
+    &__button{
+        margin-bottom: 80px;
+    }
+}

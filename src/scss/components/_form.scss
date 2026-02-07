@@ -1,13 +1,14 @@
 .form{
     position: relative;
+    font-size: 24px;
+    line-height: 160%;
     &__label{
         position: absolute;
         top: 13px;
         left: 24px;
-        font-size: 24px;
-        line-height: 160%;
         color: #475569;
         transition: all .5s ease-in-out 0s;
+        
         user-select: none;
         pointer-events: none;
     }
@@ -15,9 +16,8 @@
         border: 1px solid #CBD5E1;
         border-radius: 26px;
         padding: 13px 24px;
+        max-width: 476px;
 
-        font-size: 24px;
-        line-height: 160%;
         color: #475569;
         &:focus-visible{
             outline: 2px solid #2563EB;

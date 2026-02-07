@@ -1,0 +1,46 @@
+.feedback {
+    background-color: #FDF4FF;
+    padding-block: 80px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__title {
+        margin-bottom: 80px;
+    }
+
+    &__bottom-design-line {
+        position: absolute;
+        bottom: -50px;
+        left: -100px;
+        transform: rotate(360deg);
+
+        & path:hover {
+            stroke: #e265f5;
+            fill: #F5D0FE;
+        }
+    }
+
+    &__top-design-line {
+        position: absolute;
+        top: -100px;
+        right: -120px;
+        transform: rotate(360deg);
+
+        & path:hover {
+            stroke: #e265f5;
+            fill: #F5D0FE;
+        }
+    }
+
+    path {
+        transition: stroke .4s cubic-bezier(0.42, 0, 0.58, 1),
+            fill .4s cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+}

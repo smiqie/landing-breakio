@@ -148,21 +148,27 @@ button {
   (за исключением тех, у которых уже указан
   атрибут fill со значением 'none' или начинается с 'url')
  */
-:where([fill]:not([fill=none],
-[fill^=url])) {
+/*
+:where([fill]:not(
+  [fill="none"],
+  [fill^="url"]
+)) {
   fill: currentColor;
 }
-
+*/
 /**
   Приводим к единому цвету svg-элементы
   (за исключением тех, у которых уже указан
   атрибут stroke со значением 'none')
  */
-:where([stroke]:not([stroke=none],
-[stroke^=url])) {
+/*
+:where([stroke]:not(
+  [stroke="none"],
+  [stroke^="url"]
+)) {
   stroke: currentColor;
 }
-
+*/
 /**
   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
  */
@@ -249,8 +255,48 @@ a {
   text-decoration: none;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+.container {
+  width: 1280px;
+  padding-inline: 80px;
+  margin-inline: auto;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-extra-bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 .header {
   padding-block: 24px;
+  background-color: #FFF;
 }
 .header__list {
   display: flex;
@@ -269,15 +315,102 @@ a {
   justify-content: space-between;
 }
 
-.container {
-  width: 1280px;
-  margin-inline: auto;
-  padding-inline: 80px;
+.hero {
+  padding-block: 56px 80px;
+  background-color: #FFF;
+}
+.hero__title {
+  margin-bottom: 24px;
+  text-align: center;
+}
+.hero__form-wrapper {
+  display: flex;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  margin-bottom: 80px;
+}
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/*
+.intro {
+  padding-block: 80px;
+  background-color: #FFF;
+}
+.intro__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.intro__title {
+  margin-bottom: 24px;
+  text-align: center;
+  max-width: 900px;
+}
+.intro__button {
+  margin-bottom: 80px;
+}
 
-*/
+.testimonials {
+  padding-block: 80px;
+  background-color: #FFF;
+}
+.testimonials__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonials__title {
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 900px;
+}
+.testimonials__info-block {
+  display: flex;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+}
+
+.feedback {
+  background-color: #FDF4FF;
+  padding-block: 80px;
+}
+.feedback__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.feedback__title {
+  margin-bottom: 80px;
+}
+.feedback__bottom-design-line {
+  position: absolute;
+  bottom: -50px;
+  left: -100px;
+  transform: rotate(360deg);
+}
+.feedback__bottom-design-line path:hover {
+  stroke: #e265f5;
+  fill: #F5D0FE;
+}
+.feedback__top-design-line {
+  position: absolute;
+  top: -100px;
+  right: -120px;
+  transform: rotate(360deg);
+}
+.feedback__top-design-line path:hover {
+  stroke: #e265f5;
+  fill: #F5D0FE;
+}
+.feedback path {
+  transition: stroke 0.4s cubic-bezier(0.42, 0, 0.58, 1), fill 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
 .button {
   background-color: #C026D3;
   border-radius: 18px;
@@ -309,6 +442,7 @@ a {
 }
 .title__primary {
   line-height: 110%;
+  font-weight: 800;
   font-size: 56px;
   background: linear-gradient(to right, #C026D3, #701A75);
   background-clip: text;
@@ -319,6 +453,7 @@ a {
   font-size: 72px;
 }
 .title__secondary {
+  font-weight: 400;
   color: #475569;
   line-height: 180%;
   font-size: 20px;
@@ -326,13 +461,13 @@ a {
 
 .form {
   position: relative;
+  font-size: 24px;
+  line-height: 160%;
 }
 .form__label {
   position: absolute;
   top: 13px;
   left: 24px;
-  font-size: 24px;
-  line-height: 160%;
   color: #475569;
   transition: all 0.5s ease-in-out 0s;
   -webkit-user-select: none;
@@ -344,8 +479,7 @@ a {
   border: 1px solid #CBD5E1;
   border-radius: 26px;
   padding: 13px 24px;
-  font-size: 24px;
-  line-height: 160%;
+  max-width: 476px;
   color: #475569;
 }
 .form__input:focus-visible {
@@ -369,4 +503,104 @@ a {
 *:focus-visible {
   outline: 2px solid #2563EB;
   outline-offset: 3px;
+}
+
+.user-info {
+  border-radius: 10px;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.4);
+  color: #475569;
+}
+.user-info__showcase {
+  border-radius: 10px;
+}
+.user-info__profile {
+  display: flex;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  font-weight: 400;
+  line-height: 140%;
+  padding: 16px;
+}
+.user-info__work {
+  color: #0F172A;
+  font-size: 16px;
+}
+.user-info__credit {
+  color: #0F172A;
+  font-size: 14px;
+}
+
+.slide {
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px;
+}
+.slide__title {
+  color: #0F172A;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 110%;
+  margin-bottom: 32px;
+  max-width: 630px;
+}
+.slide__text {
+  color: #0F172A;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 160%;
+  max-width: 630px;
+  margin-bottom: 56px;
+  text-align: center;
+}
+.slide__avatar {
+  margin-bottom: 16px;
+}
+.slide__name {
+  color: #0F172A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 160%;
+}
+.slide__role {
+  color: #475569;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.slider__btn {
+  min-height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.4);
+  border-radius: 50px;
+  background-color: #FEF9FF;
+  padding: 0;
+}
+.slider__btn:hover {
+  background-color: #ead0f0;
+}
+.slider__btn:active {
+  background-color: #e7a1f5;
+}
+.slider__btn--left {
+  position: absolute;
+  transform: translateY(-50%) rotate(180deg);
+  top: 50%;
+  left: -100px;
+}
+.slider__btn--right {
+  position: absolute;
+  transform: translateY(-50%) rotate(0deg);
+  top: 50%;
+  right: -100px;
+}
+.slider__track {
+  position: relative;
 }/*# sourceMappingURL=style.css.map */
