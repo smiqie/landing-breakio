@@ -411,6 +411,37 @@ body {
   transition: stroke 0.4s cubic-bezier(0.42, 0, 0.58, 1), fill 0.4s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
+.tools {
+  padding-block: 80px;
+  background-color: #fff;
+}
+.tools__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tools__info-block {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 48px;
+  justify-content: center;
+}
+.tools__title {
+  max-width: 900px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.faq {
+  background-color: #F1F5F9;
+  padding-block: 80px;
+}
+.faq__title {
+  margin-bottom: 80px;
+  max-width: 900px;
+  text-align: center;
+}
+
 .button {
   background-color: #C026D3;
   border-radius: 18px;
@@ -510,7 +541,11 @@ body {
   max-width: -moz-max-content;
   max-width: max-content;
   box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.4);
+  transition: transform 0.4s ease;
   color: #475569;
+}
+.user-info:hover {
+  transform: translateY(-20px);
 }
 .user-info__showcase {
   border-radius: 10px;
@@ -603,4 +638,57 @@ body {
 }
 .slider__track {
   position: relative;
+}
+
+.feature-card {
+  max-width: 360px;
+}
+.feature-card__icon {
+  margin-bottom: 16px;
+}
+.feature-card__primary-text {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 110%;
+  color: #21272A;
+  margin-bottom: 16px;
+}
+.feature-card__secondary-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  color: #475569;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.faq-accordion__faq-item {
+  box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+}
+.faq-accordion__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FEF9FF;
+  padding: 0;
+}
+.faq-accordion__btn--down {
+  transform: rotate(90deg);
+}
+.faq-accordion__arrow {
+  stroke-width: 33px;
+}
+.faq-accordion__question {
+  color: #0F172A;
+  font-weight: 500;
+  line-height: 110%;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */
