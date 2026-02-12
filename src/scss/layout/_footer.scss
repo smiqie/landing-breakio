@@ -1,0 +1,84 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.footer{
+    background-color: $color-bg-primary;
+    &__links-block{
+        padding-block: $spacing-3xl;
+    }
+    &__nav-menu{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-column-gap: $spacing-3xl;
+           -moz-column-gap: $spacing-3xl;
+                column-gap: $spacing-3xl;
+    }
+    &__column{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+
+        min-width: 173px;
+
+        font-size: $font-size-xs;
+        color: $color-text-secondary;
+    }
+    &__title{
+        font-weight: 500;
+        line-height: $line-height-sm;
+        padding-block: $spacing-sm;
+    }
+    &__link{
+        font-weight: 400;
+        line-height: $line-height-md;
+        padding-block: $spacing-sm;
+        &:visited{
+            color: $color-text-secondary;
+        }
+    }
+    &__bottom-block{
+        padding-block: $spacing-xl;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-padding-end: $spacing-3xl;
+                padding-inline-end: $spacing-3xl;
+    }
+    &__info{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-column-gap: $spacing-xxs;
+           -moz-column-gap: $spacing-xxs;
+                column-gap: $spacing-xxs;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+    &__copyright{
+        color: $color-text-secondary;
+        font-weight: 400;
+        font-size: $font-size-xs;
+        line-height: $line-height-md;
+    }
+    &__socials{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-column-gap: $spacing-md;
+           -moz-column-gap: $spacing-md;
+                column-gap: $spacing-md;
+    }
+}

@@ -1,0 +1,68 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.feedback {
+    background-color: $color-bg-purple-tint;
+    padding-block: $section-padding-y;
+
+    &__container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__title {
+        margin-bottom: $spacing-5xl;
+    }
+
+    &__bottom-design-line {
+        position: absolute;
+        bottom: -50px;
+        left: -100px;
+        -webkit-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+
+        & path:hover {
+            stroke: $color-accent-purple;
+            fill: $color-accent-light;
+        }
+    }
+
+    &__top-design-line {
+        position: absolute;
+        top: -100px;
+        right: -120px;
+        -webkit-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+
+        & path:hover {
+            stroke: $color-accent-purple;
+            fill: $color-accent-light;
+        }
+    }
+
+    path {
+        -webkit-transition: stroke .4s cubic-bezier(0.42, 0, 0.58, 1),
+            fill .4s cubic-bezier(0.42, 0, 0.58, 1);
+        -o-transition: stroke .4s cubic-bezier(0.42, 0, 0.58, 1),
+            fill .4s cubic-bezier(0.42, 0, 0.58, 1);
+        transition: stroke .4s cubic-bezier(0.42, 0, 0.58, 1),
+            fill .4s cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+}

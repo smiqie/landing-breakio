@@ -1,0 +1,36 @@
+// VARIABLES
+@import "./abstracts/variables",
+        "./abstracts/media",
+        "./abstracts/mixins";
+
+// BASE
+@import
+    "./base/normalize",
+    "./base/reset",
+    "./base/base",
+    "./base/utilities",
+    "./base/typography";
+
+// LAYOUT
+@import
+    "./layout/header",
+    "./layout/hero",
+    "./layout/intro",
+    "./layout/testimonials",
+    "./layout/feedback",
+    "./layout/tools",
+    "./layout/faq.scss",
+    "./layout/footer";
+
+
+// COMPONENTS
+@import 
+    "./components/button",
+    "./components/title",
+    "./components/form",
+    "./components/focus-ring",
+    "./components/user-info",
+    "./components/slide",
+    "./components/slider",
+    "./components/feature-card",
+    "./components/faq-accordion.scss";

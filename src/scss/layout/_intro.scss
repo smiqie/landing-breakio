@@ -1,0 +1,31 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.intro{
+    padding-block: $section-padding-y;
+    background-color: $color-bg-primary;
+    &__container{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+    &__title{
+        margin-bottom: $spacing-xl;
+        text-align: center;
+        max-width: 900px;
+    }
+    &__button{
+        margin-bottom: $spacing-5xl;
+    }
+}

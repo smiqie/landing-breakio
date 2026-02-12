@@ -1,0 +1,52 @@
+
+.form{
+    position: relative;
+    font-size: $font-size-lg;
+    line-height: $line-height-xl;
+    &__label{
+        position: absolute;
+        top: 13px;
+        left: 24px;
+        color: $color-text-secondary;
+        -o-transition: all .5s ease-in-out 0s;
+        transition: all .5s ease-in-out 0s;
+        -webkit-transition: all .5s ease-in-out 0s;
+        
+        -webkit-user-select: none;
+        
+           -moz-user-select: none;
+        
+            -ms-user-select: none;
+        
+                user-select: none;
+        pointer-events: none;
+    }
+    &__input{
+        border: 1px solid $color-border;
+        border-radius: $border-radius-lg;
+        padding: $spacing-sm $spacing-xl;
+        max-width: 476px;
+
+        color: $color-text-secondary;
+        &:focus-visible{
+            outline: $outline-width solid $color-focus;
+            outline-offset: $outline-offset-form;
+        }
+    }
+    &__input:not(:-moz-placeholder-shown) + label{
+        top: 73px;
+        left: 14px;
+        font-size: $font-size-sm;
+    }
+    &__input:not(:-ms-input-placeholder) + label{
+        top: 73px;
+        left: 14px;
+        font-size: $font-size-sm;
+    }
+    &__input:not(:placeholder-shown) + label{
+        top: 73px;
+        left: 14px;
+        font-size: $font-size-sm;
+    }
+    
+}

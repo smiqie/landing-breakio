@@ -1,0 +1,85 @@
+// COLORS
+
+$color-primary: hsl(294, 69%, 49%);
+$color-primary-dark: hsl(297, 64%, 28%);
+$color-primary-light: hsl(293, 56%, 51%);
+
+$color-bg-primary: hsl(0, 0%, 100%);
+$color-bg-secondary: hsl(210, 40%, 96%);
+$color-bg-purple-pale: hsl(300, 100%, 99%);
+$color-bg-purple-tint: hsl(285, 100%, 98%);
+
+$color-text-primary: hsl(222, 47%, 11%);
+$color-text-secondary: hsl(215, 19%, 35%);
+$color-text-tertiary: hsl(200, 13%, 15%);
+$color-text-white: $color-bg-primary;
+
+$color-border: hsl(214, 32%, 78%);
+$color-focus: hsl(221, 83%, 53%);
+
+$color-hover-light: hsl(288, 56%, 88%);
+$color-active-light: hsl(290, 83%, 80%);
+
+$color-accent-purple: hsl(292, 88%, 68%);
+$color-accent-light: hsl(285, 96%, 91%);
+
+$gradient-primary: linear-gradient(to right, $color-primary, $color-primary-dark);
+
+// TYPOGRAPHY
+
+$font-family-base: 'Roboto';
+
+$font-size-xxs: 14px;
+$font-size-xs: 16px;
+$font-size-sm: 18px;
+$font-size-md: 20px;
+$font-size-lg: 24px;
+$font-size-xl: 32px;
+$font-size-2xl: 56px;
+$font-size-3xl: 72px;
+
+$line-height-sm: 110%;
+$line-height-md: 140%;
+$line-height-lg: 150%;
+$line-height-xl: 160%;
+$line-height-xxl: 180%; 
+
+$letter-spacing-normal: 0.5px;
+
+// SPACING
+
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-md: 16px;
+$spacing-lg: 20px;
+$spacing-xl: 24px;
+$spacing-2xl: 31px;
+$spacing-3xl: 48px;
+$spacing-4xl: 56px;
+$spacing-5xl: 80px;
+
+$section-padding-y: $spacing-5xl;
+
+// BORDER RADIUS
+
+$border-radius-sm: 10px;
+$border-radius-md: 18px;
+$border-radius-lg: 26px;
+$border-radius-xl: 50px;
+
+// LAYOUT ???
+
+$container-width: 1280px;
+$container-padding-x: 80px; 
+
+// BOX SHADOW
+
+$box-shadow-sm: 0px 0px 8px 0px rgb(34 60 80 / 0.4);
+$box-shadow-md: 0px 5px 10px 0px rgb(34 60 80 / 0.2);
+
+// OUTLINE
+
+$outline-offset: 3px;
+$outline-width: 2px;
+$outline-offset-form: 0px;

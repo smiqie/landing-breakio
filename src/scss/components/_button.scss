@@ -1,0 +1,30 @@
+
+.button{
+    background-color: $color-primary;
+    border-radius: $border-radius-md;
+
+    padding: $spacing-sm $spacing-2xl;
+
+    color: $color-text-white;
+    font-size: $font-size-xs;
+    line-height: $line-height-lg;
+    letter-spacing: $letter-spacing-normal;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    &--big{
+        border-radius: $border-radius-lg;
+        padding: $spacing-lg $spacing-3xl;
+        font-size: $font-size-lg;
+    }
+
+    
+    &:hover{
+        background-color: $color-primary-dark;
+    }
+    &:active{
+        background-color: $color-primary-light;
+    }
+}

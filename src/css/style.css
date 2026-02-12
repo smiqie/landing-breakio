@@ -1,0 +1,842 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure, fieldset):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Убираем скачок интерфейса по горизонтали
+    при появлении / исчезновении скроллбара
+   */
+  scrollbar-gutter: stable;
+  /**
+    Плавный скролл
+   */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+  Убирает серую подсветку при тапе на мобильных устройствах (iOS/Android)
+ */
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут fill со значением 'none' или начинается с 'url')
+ */
+/*
+:where([fill]:not(
+  [fill="none"],
+  [fill^="url"]
+)) {
+  fill: currentColor;
+}
+*/
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут stroke со значением 'none')
+ */
+/*
+:where([stroke]:not(
+  [stroke="none"],
+  [stroke^="url"]
+)) {
+  stroke: currentColor;
+}
+*/
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Приведение рамок таблиц в классический 'collapse' вид
+ */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+/*
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+  */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::after,
+*::before {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+.container {
+  max-width: 1280px;
+  padding-inline: 80px;
+  margin-inline: auto;
+}
+@media (max-width: 1023px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-extra-bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+.header {
+  padding-block: 24px;
+  background-color: hsl(0, 0%, 100%);
+}
+.header__list {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.header__link {
+  font-size: 16px;
+  line-height: 150%;
+  color: hsl(222, 47%, 11%);
+  letter-spacing: 0.5px;
+}
+.header__nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+.hero {
+  padding-block: 56px 80px;
+  background-color: hsl(0, 0%, 100%);
+}
+.hero__title {
+  margin-bottom: 24px;
+  text-align: center;
+}
+.hero__form-wrapper {
+  display: flex;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+  margin-bottom: 80px;
+}
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+.intro {
+  padding-block: 80px;
+  background-color: hsl(0, 0%, 100%);
+}
+.intro__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.intro__title {
+  margin-bottom: 24px;
+  text-align: center;
+  max-width: 900px;
+}
+.intro__button {
+  margin-bottom: 80px;
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+.testimonials {
+  padding-block: 80px;
+  background-color: hsl(0, 0%, 100%);
+}
+.testimonials__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonials__title {
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 900px;
+}
+.testimonials__info-block {
+  display: flex;
+  -moz-column-gap: 24px;
+  column-gap: 24px;
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+.feedback {
+  background-color: hsl(285, 100%, 98%);
+  padding-block: 80px;
+}
+.feedback__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.feedback__title {
+  margin-bottom: 80px;
+}
+.feedback__bottom-design-line {
+  position: absolute;
+  bottom: -50px;
+  left: -100px;
+  transform: rotate(360deg);
+}
+.feedback__bottom-design-line path:hover {
+  stroke: hsl(292, 88%, 68%);
+  fill: hsl(285, 96%, 91%);
+}
+.feedback__top-design-line {
+  position: absolute;
+  top: -100px;
+  right: -120px;
+  transform: rotate(360deg);
+}
+.feedback__top-design-line path:hover {
+  stroke: hsl(292, 88%, 68%);
+  fill: hsl(285, 96%, 91%);
+}
+.feedback path {
+  transition: stroke 0.4s cubic-bezier(0.42, 0, 0.58, 1), fill 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+.tools {
+  padding-block: 80px;
+  background-color: hsl(0, 0%, 100%);
+}
+.tools__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tools__info-block {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 48px;
+  justify-content: center;
+}
+.tools__title {
+  max-width: 900px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+.faq {
+  background-color: hsl(210, 40%, 96%);
+  padding-block: 80px;
+}
+.faq__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.faq__title {
+  margin-bottom: 80px;
+  max-width: 900px;
+  text-align: center;
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+.footer {
+  background-color: hsl(0, 0%, 100%);
+}
+.footer__links-block {
+  padding-block: 48px;
+}
+.footer__nav-menu {
+  display: flex;
+  -moz-column-gap: 48px;
+  column-gap: 48px;
+}
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  min-width: 173px;
+  font-size: 16px;
+  color: hsl(215, 19%, 35%);
+}
+.footer__title {
+  font-weight: 500;
+  line-height: 110%;
+  padding-block: 12px;
+}
+.footer__link {
+  font-weight: 400;
+  line-height: 140%;
+  padding-block: 12px;
+}
+.footer__link:visited {
+  color: hsl(215, 19%, 35%);
+}
+.footer__bottom-block {
+  padding-block: 24px;
+  display: flex;
+  justify-content: space-between;
+  padding-inline-end: 48px;
+}
+.footer__info {
+  display: flex;
+  -moz-column-gap: 4px;
+  column-gap: 4px;
+  align-items: center;
+}
+.footer__copyright {
+  color: hsl(215, 19%, 35%);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+}
+.footer__socials {
+  display: flex;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+}
+
+.button {
+  background-color: hsl(294, 69%, 49%);
+  border-radius: 18px;
+  padding: 12px 31px;
+  color: hsl(0, 0%, 100%);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.button--big {
+  border-radius: 26px;
+  padding: 20px 48px;
+  font-size: 24px;
+}
+.button:hover {
+  background-color: hsl(297, 64%, 28%);
+}
+.button:active {
+  background-color: hsl(293, 56%, 51%);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.title__primary {
+  line-height: 110%;
+  font-weight: 800;
+  font-size: 56px;
+  background: linear-gradient(to right, hsl(294, 69%, 49%), hsl(297, 64%, 28%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.title__primary--big {
+  font-size: 72px;
+}
+.title__secondary {
+  font-weight: 400;
+  color: hsl(215, 19%, 35%);
+  line-height: 180%;
+  font-size: 20px;
+}
+
+.form {
+  position: relative;
+  font-size: 24px;
+  line-height: 160%;
+}
+.form__label {
+  position: absolute;
+  top: 13px;
+  left: 24px;
+  color: hsl(215, 19%, 35%);
+  transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+.form__input {
+  border: 1px solid hsl(214, 32%, 78%);
+  border-radius: 26px;
+  padding: 12px 24px;
+  max-width: 476px;
+  color: hsl(215, 19%, 35%);
+}
+.form__input:focus-visible {
+  outline: 2px solid hsl(221, 83%, 53%);
+  outline-offset: 0px;
+}
+.form__input:not(:-moz-placeholder-shown) + label {
+  top: 73px;
+  left: 14px;
+  font-size: 18px;
+}
+.form__input:not(:-moz-placeholder) + label {
+  top: 73px;
+  left: 14px;
+  font-size: 18px;
+}
+.form__input:not(:placeholder-shown) + label {
+  top: 73px;
+  left: 14px;
+  font-size: 18px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+*:focus-visible {
+  outline: 2px solid hsl(221, 83%, 53%);
+  outline-offset: 3px;
+}
+
+.user-info {
+  border-radius: 10px;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.4);
+  transition: transform 0.4s ease;
+}
+.user-info:hover {
+  transform: translateY(-20px);
+}
+.user-info__showcase {
+  border-radius: 10px;
+}
+.user-info__profile {
+  display: flex;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
+  font-weight: 400;
+  line-height: 140%;
+  padding: 16px;
+}
+.user-info__work {
+  color: hsl(222, 47%, 11%);
+  font-size: 16px;
+}
+.user-info__credit {
+  color: hsl(215, 19%, 35%);
+  font-size: 14px;
+}
+
+.slide {
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px;
+  color: hsl(222, 47%, 11%);
+}
+.slide__title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 110%;
+  margin-bottom: 31px;
+  max-width: 630px;
+}
+.slide__text {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 160%;
+  max-width: 630px;
+  margin-bottom: 56px;
+  text-align: center;
+}
+.slide__avatar {
+  margin-bottom: 16px;
+}
+.slide__name {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 160%;
+}
+.slide__role {
+  color: hsl(215, 19%, 35%);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.slider__btn {
+  min-height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.4);
+  border-radius: 50px;
+  background-color: hsl(300, 100%, 99%);
+  padding: 0;
+}
+.slider__btn:hover {
+  background-color: hsl(288, 56%, 88%);
+}
+.slider__btn:active {
+  background-color: hsl(290, 83%, 80%);
+}
+.slider__btn--left {
+  position: absolute;
+  transform: translateY(-50%) rotate(180deg);
+  top: 50%;
+  left: -100px;
+}
+.slider__btn--right {
+  position: absolute;
+  transform: translateY(-50%) rotate(0deg);
+  top: 50%;
+  right: -100px;
+}
+.slider__track {
+  position: relative;
+}
+
+.feature-card {
+  max-width: 360px;
+}
+.feature-card__icon {
+  margin-bottom: 16px;
+}
+.feature-card__primary-text {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 110%;
+  color: hsl(200, 13%, 15%);
+  margin-bottom: 16px;
+}
+.feature-card__secondary-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  color: hsl(215, 19%, 35%);
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.faq-accordion__faq-item {
+  box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 31px;
+  max-width: 1280px;
+  min-width: 1140px;
+}
+.faq-accordion__btn {
+  min-height: 46px;
+  min-width: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(300, 100%, 99%);
+  padding: 0;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  border-radius: 18px;
+}
+.faq-accordion__btn:hover {
+  filter: saturate(200%) blur(0.5px);
+  background-color: hsl(288, 56%, 88%);
+}
+.faq-accordion__btn:active {
+  background-color: hsl(290, 83%, 80%);
+}
+.faq-accordion__btn--down {
+  transform: rotate(0deg);
+}
+.faq-accordion__btn--up {
+  transform: rotate(180deg);
+}
+.faq-accordion__question {
+  color: hsl(222, 47%, 11%);
+  font-weight: 500;
+  line-height: 110%;
+  font-size: 20px;
+}/*# sourceMappingURL=style.css.map */

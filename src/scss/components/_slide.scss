@@ -1,0 +1,45 @@
+.slide{
+    -webkit-box-shadow: $box-shadow-sm;
+            box-shadow: $box-shadow-sm;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: $spacing-3xl;
+    color: $color-text-primary;
+    &__title{
+        font-size: $font-size-xl;
+        font-weight: 700;
+        line-height: $line-height-sm;
+        margin-bottom: $spacing-2xl;
+        max-width: 630px;
+    }
+    &__text{
+        font-size: $font-size-lg;
+        font-weight: 400;
+        line-height: $line-height-xl;
+        max-width: 630px;
+        margin-bottom: $spacing-4xl;
+        text-align: center;
+    }
+    &__avatar{
+        margin-bottom: $spacing-md;
+    }
+    &__name{
+        font-size: $font-size-sm;
+        font-weight: 400;
+        line-height: $line-height-xl;
+    }
+    &__role{
+        color: $color-text-secondary;
+        font-size: $font-size-xs;
+        font-weight: 400;
+        line-height: $line-height-md;
+    }
+}

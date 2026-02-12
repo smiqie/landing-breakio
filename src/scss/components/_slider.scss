@@ -1,0 +1,45 @@
+.slider{
+    &__btn{
+        min-height: 48px;
+        min-width: 48px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-shadow: $box-shadow-sm;
+                box-shadow: $box-shadow-sm;
+        border-radius: $border-radius-xl;
+        background-color: $color-bg-purple-pale;
+        padding: 0;
+        &:hover{
+            background-color: $color-hover-light;
+        }
+        &:active{
+            background-color: $color-active-light;
+        }
+        &--left{
+            position: absolute;
+            -webkit-transform: translateY(-50%) rotate(180deg);
+                -ms-transform: translateY(-50%) rotate(180deg);
+                    transform: translateY(-50%) rotate(180deg);
+            top: 50%;
+            left: -100px;
+        }
+        &--right{
+            position: absolute;
+            -webkit-transform: translateY(-50%) rotate(0deg);
+                -ms-transform: translateY(-50%) rotate(0deg);
+                    transform: translateY(-50%) rotate(0deg);
+            top: 50%;
+            right: -100px;
+        }
+    }
+    &__track{
+        position: relative;
+    }
+}

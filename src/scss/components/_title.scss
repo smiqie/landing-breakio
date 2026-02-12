@@ -1,0 +1,31 @@
+.title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: $spacing-xl;
+
+    &__primary {
+        line-height: $line-height-sm;
+        font-weight: 800;
+        font-size: $font-size-2xl;
+        background: $gradient-primary;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+
+        &--big {
+            font-size: $font-size-3xl;
+        }
+    }
+
+    &__secondary {
+        font-weight: 400;
+        color: $color-text-secondary;
+        line-height: $line-height-xxl;
+        font-size: $font-size-md;
+    }
+}
