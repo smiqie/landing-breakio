@@ -1,0 +1,8 @@
+@mixin fluid-text($min-size, $max-size)
+{
+    font-size: clamp(
+        #{$min-size}px,
+        calc(#{$max-size}px / $container-width * 100vw),
+        #{$max-size}px
+         );
+}

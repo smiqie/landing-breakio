@@ -4,9 +4,16 @@
     border-radius: $border-radius-md;
 
     padding: $spacing-sm $spacing-2xl;
+    @include tablet{
+        padding: $spacing-sm $spacing-xl;
+    }
+    @include mobile{
+        padding: $spacing-xs $spacing-lg;
+    }
 
     color: $color-text-white;
     font-size: $font-size-xs;
+    @include fluid-text(14, 16);
     line-height: $line-height-lg;
     letter-spacing: $letter-spacing-normal;
     -webkit-user-select: none;
@@ -17,7 +24,14 @@
     &--big{
         border-radius: $border-radius-lg;
         padding: $spacing-lg $spacing-3xl;
+        @include tablet{
+            padding: $spacing-md $spacing-2xl;
+        }
+        @include mobile{
+            padding: $spacing-xxs $spacing-md;
+        }
         font-size: $font-size-lg;
+        @include fluid-text(18, 24);
     }
 
     

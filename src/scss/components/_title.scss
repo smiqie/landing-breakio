@@ -19,7 +19,10 @@
 
         &--big {
             font-size: $font-size-3xl;
+            @include fluid-text(40, 72);
+
         }
+        @include fluid-text(32, 56);
     }
 
     &__secondary {
@@ -27,5 +30,6 @@
         color: $color-text-secondary;
         line-height: $line-height-xxl;
         font-size: $font-size-md;
+        @include fluid-text(16, 20);
     }
 }

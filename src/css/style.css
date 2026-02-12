@@ -317,12 +317,6 @@ body {
   font-style: normal;
   font-display: swap;
 }
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 .header {
   padding-block: 24px;
   background-color: hsl(0, 0%, 100%);
@@ -332,8 +326,19 @@ body {
   gap: 16px;
   align-items: center;
 }
+@media (max-width: 1023px) {
+  .header__list {
+    gap: 12px;
+  }
+}
+@media (max-width: 767px) {
+  .header__list {
+    gap: 8px;
+  }
+}
 .header__link {
   font-size: 16px;
+  font-size: clamp(14px, 16px / 1280px * 100vw, 16px);
   line-height: 150%;
   color: hsl(222, 47%, 11%);
   letter-spacing: 0.5px;
@@ -579,16 +584,38 @@ body {
   padding: 12px 31px;
   color: hsl(0, 0%, 100%);
   font-size: 16px;
+  font-size: clamp(14px, 16px / 1280px * 100vw, 16px);
   line-height: 150%;
   letter-spacing: 0.5px;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 }
+@media (max-width: 1023px) {
+  .button {
+    padding: 12px 24px;
+  }
+}
+@media (max-width: 767px) {
+  .button {
+    padding: 8px 20px;
+  }
+}
 .button--big {
   border-radius: 26px;
   padding: 20px 48px;
   font-size: 24px;
+  font-size: clamp(18px, 24px / 1280px * 100vw, 24px);
+}
+@media (max-width: 1023px) {
+  .button--big {
+    padding: 16px 31px;
+  }
+}
+@media (max-width: 767px) {
+  .button--big {
+    padding: 4px 16px;
+  }
 }
 .button:hover {
   background-color: hsl(297, 64%, 28%);
@@ -610,15 +637,18 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  font-size: clamp(32px, 56px / 1280px * 100vw, 56px);
 }
 .title__primary--big {
   font-size: 72px;
+  font-size: clamp(40px, 72px / 1280px * 100vw, 72px);
 }
 .title__secondary {
   font-weight: 400;
   color: hsl(215, 19%, 35%);
   line-height: 180%;
   font-size: 20px;
+  font-size: clamp(16px, 20px / 1280px * 100vw, 20px);
 }
 
 .form {
