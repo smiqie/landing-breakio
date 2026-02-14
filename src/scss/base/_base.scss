@@ -4,6 +4,13 @@
     border: none; // !
     outline: none;
 }
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
 a{
     text-decoration: none;
 }
@@ -11,4 +18,30 @@ a{
 body{
     font-family: 'Roboto', sans-serif;
     font-style: normal;
+}
+ul{
+    list-style: none;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button, 
+label{
+   cursor: pointer;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+    transition-property: fill, stroke;
 }

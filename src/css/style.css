@@ -1,8 +1,5 @@
 @charset "UTF-8";
 /**
-  Нормализация блочной модели
- */
-/**
   Убираем внутренние отступы слева тегам списков,
   у которых есть атрибут class
  */
@@ -46,18 +43,6 @@ dl):where([class]) {
 }
 
 /**
-  Убираем стандартный маркер маркированному списку,
-  у которого есть атрибут class
- */
-:where(ul[class]) {
-  list-style: none;
-}
-
-:where(address[class]) {
-  font-style: normal;
-}
-
-/**
   Обнуляем вертикальные внешние отступы параграфа,
   объявляем локальную переменную для внешнего отступа вниз,
   чтобы избежать взаимодействие с более сложным селектором
@@ -73,16 +58,6 @@ p {
  */
 p:where(:not([class]):not(:last-child)) {
   margin-bottom: var(--paragraphMarginBottom);
-}
-
-/**
-  Упрощаем работу с изображениями и видео
- */
-img,
-video {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 /**
@@ -106,10 +81,6 @@ html {
     при появлении / исчезновении скроллбара
    */
   scrollbar-gutter: stable;
-  /**
-    Плавный скролл
-   */
-  scroll-behavior: smooth;
 }
 
 body {
@@ -132,51 +103,10 @@ a:where([class]) {
 }
 
 /**
-  Курсор-рука при наведении на элемент
- */
-button,
-label {
-  cursor: pointer;
-}
-
-/**
   Убирает серую подсветку при тапе на мобильных устройствах (iOS/Android)
  */
 button {
   -webkit-tap-highlight-color: transparent;
-}
-
-/**
-  Приводим к единому цвету svg-элементы
-  (за исключением тех, у которых уже указан
-  атрибут fill со значением 'none' или начинается с 'url')
- */
-/*
-:where([fill]:not(
-  [fill="none"],
-  [fill^="url"]
-)) {
-  fill: currentColor;
-}
-*/
-/**
-  Приводим к единому цвету svg-элементы
-  (за исключением тех, у которых уже указан
-  атрибут stroke со значением 'none')
- */
-/*
-:where([stroke]:not(
-  [stroke="none"],
-  [stroke^="url"]
-)) {
-  stroke: currentColor;
-}
-*/
-/**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
- */
-svg * {
-  transition-property: fill, stroke;
 }
 
 /**
@@ -187,22 +117,6 @@ svg * {
   border-color: currentColor;
 }
 
-/**
-  Удаляем все анимации и переходы для людей,
-  которые предпочитают их не использовать
- */
-/*
-@media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-  */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -230,10 +144,6 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-body {
-  line-height: 1;
-}
-
 blockquote, q {
   quotes: none;
 }
@@ -244,16 +154,17 @@ q:before, q:after {
   content: none;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 *,
 *::after,
 *::before {
   border: none;
   outline: none;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 a {
@@ -263,6 +174,35 @@ a {
 body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
 }
 
 .container {
@@ -360,6 +300,7 @@ body {
 }
 .hero__form-wrapper {
   display: flex;
+  align-items: center;
   -moz-column-gap: 16px;
   column-gap: 16px;
   margin-bottom: 80px;
@@ -623,7 +564,7 @@ body {
   color: hsl(215, 19%, 35%);
   font-weight: 400;
   font-size: 16px;
-  font-size: clamp(12px, 14px / 1280px * 100vw, 14px);
+  font-size: clamp(13px, 14px / 1280px * 100vw, 14px);
   line-height: 140%;
 }
 .footer__socials {
@@ -644,6 +585,7 @@ body {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  transition: transform 0.1s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%), background-color 0.3s linear;
 }
 @media (max-width: 1023px) {
   .button {
@@ -669,15 +611,26 @@ body {
 }
 @media (max-width: 767px) {
   .button--big {
-    padding: 4px 16px;
     border-radius: 18px;
   }
 }
-.button:hover {
-  background-color: hsl(297, 64%, 28%);
+@media (hover: hover) {
+  .button:hover {
+    background-color: hsl(297, 64%, 28%);
+    transform: translateY(-2px);
+  }
 }
-.button:active {
-  background-color: hsl(293, 56%, 51%);
+@media (hover: none) {
+  .button:active {
+    background-color: hsl(297, 64%, 28%);
+    transform: translateY(-2px);
+  }
+}
+@media (hover: hover) {
+  .button:active {
+    background-color: hsl(293, 56%, 51%);
+    transform: translateY(2px);
+  }
 }
 
 .title {

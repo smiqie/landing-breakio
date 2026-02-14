@@ -1,19 +1,21 @@
-@mixin fluid-text($min-size, $max-size)
-{
+@mixin fluid-text($min-size, $max-size) {
     font-size: clamp(
         #{$min-size}px,
         calc(#{$max-size}px / $container-width * 100vw),
-        #{$max-size}px
-         );
+        #{$max-size}px);
 }
 
 @mixin hover {
-    // сработает ток на устройствах, где классический эффект наведения (курсора) принципе возможен
+
     @media(hover: hover) {
-        &:hover{ @content; }
-    } 
-    // сработает ток на устрйоствах с тач-экраном, где привчное навдение отсутствует
+        &:hover {
+            @content;
+        }
+    }
+
     @media(hover: none) {
-        &:active{ @content; }
+        &:active {
+            @content;
+        }
     }
 }
