@@ -1,12 +1,9 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 .hero{
     padding-block: $spacing-4xl $section-padding-y;
+    @include tablet{
+        padding-block-start: $spacing-3xl;
+        padding-block-end: $spacing-2xl;
+    }
     background-color: $color-bg-primary;
     &__title{
         margin-bottom: $spacing-xl;

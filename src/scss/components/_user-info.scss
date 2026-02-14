@@ -3,6 +3,10 @@
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
+    @include desktop{
+        width: 224px;
+        height: auto;
+    }
     -webkit-box-shadow: $box-shadow-sm;
             box-shadow: $box-shadow-sm;
 
@@ -24,6 +28,12 @@
     &__showcase{
         border-radius: $border-radius-sm;
     }
+    &__avatar{
+        @include desktop{
+            width: 44px;
+            height: auto;
+        }
+    }
     &__profile {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -39,10 +49,12 @@
     &__work {
         color: $color-text-primary;
         font-size: $font-size-xs;
+        @include fluid-text(15, 16);
     }
 
     &__credit {
         color: $color-text-secondary;
         font-size: $font-size-xxs;
+        @include fluid-text(14, 15);
     }
 }

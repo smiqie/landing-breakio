@@ -31,5 +31,8 @@
         line-height: $line-height-xxl;
         font-size: $font-size-md;
         @include fluid-text(16, 20);
+        @include tablet{
+            max-width: 530px;
+        }
     }
 }

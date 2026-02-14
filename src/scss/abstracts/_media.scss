@@ -1,8 +1,9 @@
-// dektop first
-$desktop: 1280px;
-$tablet: 1023px;
-$mobile: 767px;
-$mobile-s: 480px;
+// Dektop First
+
+$desktop: 1280px; // completed
+$tablet: 1023px; // completed
+$mobile: 767px; // +- completed
+$mobile-s: 480px; // -
 
 
 @mixin desktop {
@@ -25,48 +26,5 @@ $mobile-s: 480px;
 @mixin mobile-s {
     @media(max-width: $mobile-s) {
         @content;
-    }
-}
-
-// mobile first
-$desktop-above: 1281px;
-$tablet-above: 1024px;
-$mobile-above: 768px;
-$mobile-s-above: 481px;
-
-@mixin desktop-above {
-    @media(min-width: $desktop-above) {
-        @content;
-    }
-}
-
-@mixin tablet-above {
-    @media(min-width: $tablet-above) {
-        @content;
-    }
-}
-
-@mixin mobile-above {
-    @media(min-width: $mobile-above) {
-        @content;
-    }
-}
-@mixin mobile-s-above {
-    @media(min-width: $mobile-s-above) {
-        @content;
-    }
-}
-
-
-// ==========
-
-@mixin hover {
-    // сработает ток на устройствах, где классический эффект наведения (курсора) принципе возможен
-    @media(hover: hover) {
-        &:hover{ @content; }
-    } 
-    // сработает ток на устрйоствах с тач-экраном, где привчное навдение отсутствует
-    @media(hover: none) {
-        &:active{ @content; }
     }
 }

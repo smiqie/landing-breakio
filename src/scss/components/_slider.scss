@@ -29,6 +29,9 @@
                     transform: translateY(-50%) rotate(180deg);
             top: 50%;
             left: -100px;
+            @include tablet{
+                left: -70px;
+            }
         }
         &--right{
             position: absolute;
@@ -37,6 +40,9 @@
                     transform: translateY(-50%) rotate(0deg);
             top: 50%;
             right: -100px;
+            @include tablet{
+                right: -70px;
+            }
         }
     }
     &__track{

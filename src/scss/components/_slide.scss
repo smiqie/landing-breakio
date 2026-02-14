@@ -12,9 +12,14 @@
         -ms-flex-align: center;
             align-items: center;
     padding: $spacing-3xl;
+    @include tablet{
+        padding: $spacing-2xl;
+    }
     color: $color-text-primary;
+    max-width: 500px;
     &__title{
         font-size: $font-size-xl;
+        @include fluid-text(22, 32);
         font-weight: 700;
         line-height: $line-height-sm;
         margin-bottom: $spacing-2xl;
@@ -22,10 +27,14 @@
     }
     &__text{
         font-size: $font-size-lg;
+        @include fluid-text(18, 24);
         font-weight: 400;
         line-height: $line-height-xl;
         max-width: 630px;
         margin-bottom: $spacing-4xl;
+        @include tablet{
+            margin-bottom: $spacing-2xl;
+        }
         text-align: center;
     }
     &__avatar{
@@ -33,11 +42,13 @@
     }
     &__name{
         font-size: $font-size-sm;
+        @include fluid-text(16, 18);
         font-weight: 400;
         line-height: $line-height-xl;
     }
     &__role{
         color: $color-text-secondary;
+        @include fluid-text(14, 16);
         font-size: $font-size-xs;
         font-weight: 400;
         line-height: $line-height-md;

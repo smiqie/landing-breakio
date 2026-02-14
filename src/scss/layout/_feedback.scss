@@ -1,14 +1,9 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 .feedback {
     background-color: $color-bg-purple-tint;
     padding-block: $section-padding-y;
-
+    @include tablet{
+        padding-block: $spacing-4xl;
+    }
     &__container {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -26,6 +21,7 @@
 
     &__title {
         margin-bottom: $spacing-5xl;
+        @include fluid-text(28, 56);
     }
 
     &__bottom-design-line {
@@ -40,6 +36,21 @@
             stroke: $color-accent-purple;
             fill: $color-accent-light;
         }
+
+        @include desktop{
+            width: 250px;
+            height: auto;
+        }
+        @include tablet{
+            width: 190px;
+            height: auto;
+            bottom: -80px;
+            left: -120px;
+        }
+        @include mobile{
+            display: none;
+        }
+        
     }
 
     &__top-design-line {
@@ -53,6 +64,18 @@
         & path:hover {
             stroke: $color-accent-purple;
             fill: $color-accent-light;
+        }
+        @include desktop{
+            width: 262px;
+            height: auto;
+        }
+        @include tablet{
+            width: 202px;
+            height: auto;
+            top: -130px;
+        }
+        @include mobile{
+            display: none;
         }
     }
 

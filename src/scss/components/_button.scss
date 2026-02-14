@@ -9,6 +9,7 @@
     }
     @include mobile{
         padding: $spacing-xs $spacing-lg;
+        border-radius: $border-radius-sm;
     }
 
     color: $color-text-white;
@@ -29,6 +30,7 @@
         }
         @include mobile{
             padding: $spacing-xxs $spacing-md;
+            border-radius: $border-radius-md;
         }
         font-size: $font-size-lg;
         @include fluid-text(18, 24);

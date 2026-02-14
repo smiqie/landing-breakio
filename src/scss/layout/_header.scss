@@ -6,9 +6,6 @@
         display: -ms-flexbox;
         display: flex;
         gap: $spacing-md;
-        @include tablet{ 
-            gap: $spacing-sm;
-        }
         @include mobile{ 
             gap: $spacing-xs;
         }

@@ -2,6 +2,9 @@
 .form{
     position: relative;
     font-size: $font-size-lg;
+    @include tablet{
+        font-size: $font-size-md;
+    }
     line-height: $line-height-xl;
     &__label{
         position: absolute;
@@ -26,6 +29,9 @@
         border-radius: $border-radius-lg;
         padding: $spacing-sm $spacing-xl;
         max-width: 476px;
+        @include tablet{
+            max-width: 456px;
+        }
 
         color: $color-text-secondary;
         &:focus-visible{

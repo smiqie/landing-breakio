@@ -1,13 +1,9 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 .faq{
     background-color: $color-bg-secondary;
     padding-block: $section-padding-y;
+    @include tablet{
+        padding-block: $spacing-4xl;
+    }
     &__container{
         display: -webkit-box;
         display: -ms-flexbox;
@@ -22,6 +18,9 @@
     }
     &__title{
         margin-bottom: $spacing-5xl;
+        @include tablet{
+            margin-bottom: $spacing-3xl;
+        }
         max-width: 900px;
         text-align: center;
     }

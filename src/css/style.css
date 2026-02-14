@@ -326,11 +326,6 @@ body {
   gap: 16px;
   align-items: center;
 }
-@media (max-width: 1023px) {
-  .header__list {
-    gap: 12px;
-  }
-}
 @media (max-width: 767px) {
   .header__list {
     gap: 8px;
@@ -349,15 +344,15 @@ body {
   justify-content: space-between;
 }
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 .hero {
   padding-block: 56px 80px;
   background-color: hsl(0, 0%, 100%);
+}
+@media (max-width: 1023px) {
+  .hero {
+    padding-block-start: 48px;
+    padding-block-end: 31px;
+  }
 }
 .hero__title {
   margin-bottom: 24px;
@@ -375,15 +370,15 @@ body {
   align-items: center;
 }
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 .intro {
   padding-block: 80px;
   background-color: hsl(0, 0%, 100%);
+}
+@media (max-width: 1023px) {
+  .intro {
+    padding-block-start: 56px;
+    padding-block-end: 31px;
+  }
 }
 .intro__container {
   display: flex;
@@ -399,15 +394,14 @@ body {
   margin-bottom: 80px;
 }
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 .testimonials {
   padding-block: 80px;
   background-color: hsl(0, 0%, 100%);
+}
+@media (max-width: 1023px) {
+  .testimonials {
+    padding-block: 56px;
+  }
 }
 .testimonials__container {
   display: flex;
@@ -424,16 +418,22 @@ body {
   -moz-column-gap: 24px;
   column-gap: 24px;
 }
+@media (max-width: 1023px) {
+  .testimonials__info-block {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 31px;
+  }
+}
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 .feedback {
   background-color: hsl(285, 100%, 98%);
   padding-block: 80px;
+}
+@media (max-width: 1023px) {
+  .feedback {
+    padding-block: 56px;
+  }
 }
 .feedback__container {
   display: flex;
@@ -444,6 +444,7 @@ body {
 }
 .feedback__title {
   margin-bottom: 80px;
+  font-size: clamp(28px, 56px / 1280px * 100vw, 56px);
 }
 .feedback__bottom-design-line {
   position: absolute;
@@ -455,6 +456,25 @@ body {
   stroke: hsl(292, 88%, 68%);
   fill: hsl(285, 96%, 91%);
 }
+@media (max-width: 1280px) {
+  .feedback__bottom-design-line {
+    width: 250px;
+    height: auto;
+  }
+}
+@media (max-width: 1023px) {
+  .feedback__bottom-design-line {
+    width: 190px;
+    height: auto;
+    bottom: -80px;
+    left: -120px;
+  }
+}
+@media (max-width: 767px) {
+  .feedback__bottom-design-line {
+    display: none;
+  }
+}
 .feedback__top-design-line {
   position: absolute;
   top: -100px;
@@ -465,19 +485,36 @@ body {
   stroke: hsl(292, 88%, 68%);
   fill: hsl(285, 96%, 91%);
 }
+@media (max-width: 1280px) {
+  .feedback__top-design-line {
+    width: 262px;
+    height: auto;
+  }
+}
+@media (max-width: 1023px) {
+  .feedback__top-design-line {
+    width: 202px;
+    height: auto;
+    top: -130px;
+  }
+}
+@media (max-width: 767px) {
+  .feedback__top-design-line {
+    display: none;
+  }
+}
 .feedback path {
   transition: stroke 0.4s cubic-bezier(0.42, 0, 0.58, 1), fill 0.4s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 .tools {
   padding-block: 80px;
   background-color: hsl(0, 0%, 100%);
+}
+@media (max-width: 1023px) {
+  .tools {
+    padding-block: 56px;
+  }
 }
 .tools__container {
   display: flex;
@@ -496,15 +533,14 @@ body {
   margin-bottom: 48px;
 }
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 .faq {
   background-color: hsl(210, 40%, 96%);
   padding-block: 80px;
+}
+@media (max-width: 1023px) {
+  .faq {
+    padding-block: 56px;
+  }
 }
 .faq__container {
   display: flex;
@@ -516,13 +552,12 @@ body {
   max-width: 900px;
   text-align: center;
 }
+@media (max-width: 1023px) {
+  .faq__title {
+    margin-bottom: 48px;
+  }
+}
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 .footer {
   background-color: hsl(0, 0%, 100%);
 }
@@ -531,15 +566,28 @@ body {
 }
 .footer__nav-menu {
   display: flex;
+  justify-content: center;
   -moz-column-gap: 48px;
   column-gap: 48px;
+}
+@media (max-width: 1023px) {
+  .footer__nav-menu {
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
 }
 .footer__column {
   display: flex;
   flex-direction: column;
-  min-width: 173px;
+  min-width: 170px;
   font-size: 16px;
   color: hsl(215, 19%, 35%);
+}
+@media (max-width: 1280px) {
+  .footer__column {
+    min-width: 110px;
+    max-width: 110px;
+  }
 }
 .footer__title {
   font-weight: 500;
@@ -550,6 +598,11 @@ body {
   font-weight: 400;
   line-height: 140%;
   padding-block: 12px;
+}
+@media (max-width: 1023px) {
+  .footer__link {
+    padding-block: 8px;
+  }
 }
 .footer__link:visited {
   color: hsl(215, 19%, 35%);
@@ -570,6 +623,7 @@ body {
   color: hsl(215, 19%, 35%);
   font-weight: 400;
   font-size: 16px;
+  font-size: clamp(12px, 14px / 1280px * 100vw, 14px);
   line-height: 140%;
 }
 .footer__socials {
@@ -599,6 +653,7 @@ body {
 @media (max-width: 767px) {
   .button {
     padding: 8px 20px;
+    border-radius: 10px;
   }
 }
 .button--big {
@@ -615,6 +670,7 @@ body {
 @media (max-width: 767px) {
   .button--big {
     padding: 4px 16px;
+    border-radius: 18px;
   }
 }
 .button:hover {
@@ -650,11 +706,21 @@ body {
   font-size: 20px;
   font-size: clamp(16px, 20px / 1280px * 100vw, 20px);
 }
+@media (max-width: 1023px) {
+  .title__secondary {
+    max-width: 530px;
+  }
+}
 
 .form {
   position: relative;
   font-size: 24px;
   line-height: 160%;
+}
+@media (max-width: 1023px) {
+  .form {
+    font-size: 20px;
+  }
 }
 .form__label {
   position: absolute;
@@ -674,6 +740,11 @@ body {
   padding: 12px 24px;
   max-width: 476px;
   color: hsl(215, 19%, 35%);
+}
+@media (max-width: 1023px) {
+  .form__input {
+    max-width: 456px;
+  }
 }
 .form__input:focus-visible {
   outline: 2px solid hsl(221, 83%, 53%);
@@ -710,11 +781,23 @@ body {
   box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.4);
   transition: transform 0.4s ease;
 }
+@media (max-width: 1280px) {
+  .user-info {
+    width: 224px;
+    height: auto;
+  }
+}
 .user-info:hover {
   transform: translateY(-20px);
 }
 .user-info__showcase {
   border-radius: 10px;
+}
+@media (max-width: 1280px) {
+  .user-info__avatar {
+    width: 44px;
+    height: auto;
+  }
 }
 .user-info__profile {
   display: flex;
@@ -727,10 +810,12 @@ body {
 .user-info__work {
   color: hsl(222, 47%, 11%);
   font-size: 16px;
+  font-size: clamp(15px, 16px / 1280px * 100vw, 16px);
 }
 .user-info__credit {
   color: hsl(215, 19%, 35%);
   font-size: 14px;
+  font-size: clamp(14px, 15px / 1280px * 100vw, 15px);
 }
 
 .slide {
@@ -740,9 +825,16 @@ body {
   align-items: center;
   padding: 48px;
   color: hsl(222, 47%, 11%);
+  max-width: 500px;
+}
+@media (max-width: 1023px) {
+  .slide {
+    padding: 31px;
+  }
 }
 .slide__title {
   font-size: 32px;
+  font-size: clamp(22px, 32px / 1280px * 100vw, 32px);
   font-weight: 700;
   line-height: 110%;
   margin-bottom: 31px;
@@ -750,22 +842,30 @@ body {
 }
 .slide__text {
   font-size: 24px;
+  font-size: clamp(18px, 24px / 1280px * 100vw, 24px);
   font-weight: 400;
   line-height: 160%;
   max-width: 630px;
   margin-bottom: 56px;
   text-align: center;
 }
+@media (max-width: 1023px) {
+  .slide__text {
+    margin-bottom: 31px;
+  }
+}
 .slide__avatar {
   margin-bottom: 16px;
 }
 .slide__name {
   font-size: 18px;
+  font-size: clamp(16px, 18px / 1280px * 100vw, 18px);
   font-weight: 400;
   line-height: 160%;
 }
 .slide__role {
   color: hsl(215, 19%, 35%);
+  font-size: clamp(14px, 16px / 1280px * 100vw, 16px);
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
@@ -794,11 +894,21 @@ body {
   top: 50%;
   left: -100px;
 }
+@media (max-width: 1023px) {
+  .slider__btn--left {
+    left: -70px;
+  }
+}
 .slider__btn--right {
   position: absolute;
   transform: translateY(-50%) rotate(0deg);
   top: 50%;
   right: -100px;
+}
+@media (max-width: 1023px) {
+  .slider__btn--right {
+    right: -70px;
+  }
 }
 .slider__track {
   position: relative;
@@ -807,12 +917,23 @@ body {
 .feature-card {
   max-width: 360px;
 }
+@media (max-width: 1023px) {
+  .feature-card {
+    max-width: 240px;
+  }
+}
+@media (max-width: 767px) {
+  .feature-card {
+    max-width: 210px;
+  }
+}
 .feature-card__icon {
   margin-bottom: 16px;
 }
 .feature-card__primary-text {
   font-weight: 700;
   font-size: 24px;
+  font-size: clamp(18px, 24px / 1280px * 100vw, 24px);
   line-height: 110%;
   color: hsl(200, 13%, 15%);
   margin-bottom: 16px;
@@ -820,6 +941,7 @@ body {
 .feature-card__secondary-text {
   font-weight: 400;
   font-size: 18px;
+  font-size: clamp(15px, 18px / 1280px * 100vw, 18px);
   line-height: 160%;
   color: hsl(215, 19%, 35%);
 }
@@ -837,7 +959,18 @@ body {
   align-items: center;
   padding: 31px;
   max-width: 1280px;
-  min-width: 1140px;
+  min-width: 840px;
+}
+@media (max-width: 1023px) {
+  .faq-accordion__faq-item {
+    padding: 24px;
+  }
+}
+@media (max-width: 1023px) {
+  .faq-accordion__faq-item {
+    max-width: 700px;
+    min-width: 500px;
+  }
 }
 .faq-accordion__btn {
   min-height: 46px;
@@ -869,4 +1002,10 @@ body {
   font-weight: 500;
   line-height: 110%;
   font-size: 20px;
+}
+@media (max-width: 1023px) {
+  .faq-accordion__question {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
 }/*# sourceMappingURL=style.css.map */

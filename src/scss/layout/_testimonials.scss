@@ -1,12 +1,8 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 .testimonials{
     padding-block: $section-padding-y;
+    @include tablet{
+        padding-block: $spacing-4xl;
+    }
     background-color: $color-bg-primary;
     &__container{
         display: -webkit-box;
@@ -32,5 +28,10 @@
         -webkit-column-gap: $spacing-xl;
            -moz-column-gap: $spacing-xl;
                 column-gap: $spacing-xl;
+        @include tablet{
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: $spacing-2xl
+        }
     }
 }

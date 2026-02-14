@@ -1,12 +1,8 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 .tools {
     padding-block: $section-padding-y;
+    @include tablet{
+        padding-block: $spacing-4xl;
+    }
     background-color: $color-bg-primary;
 
     &__container{
