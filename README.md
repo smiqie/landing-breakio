@@ -1,4 +1,4 @@
-# Breakio
+# Breakio 🧘
 
 Responsive landing page for a mindfulness app.
 
