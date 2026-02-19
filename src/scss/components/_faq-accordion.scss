@@ -55,14 +55,15 @@
         -webkit-transition: all 0.4s ease;
         border-radius: $border-radius-md;
 
-        &:hover {
+        @include hover{
             -webkit-filter: saturate(200%) blur(0.5px);
                     filter: saturate(200%) blur(0.5px);
             background-color: $color-hover-light;
         }
-
-        &:active {
-            background-color: $color-active-light;
+        @media (hover: hover){
+            &:active{
+                background-color: $color-active-light;
+            }
         }
 
         &--down {

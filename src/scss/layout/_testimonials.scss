@@ -31,7 +31,7 @@
         @include tablet{
             flex-wrap: wrap;
             justify-content: center;
-            gap: $spacing-2xl
+            gap: $spacing-2xl $spacing-4xl;
         }
     }
 }

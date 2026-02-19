@@ -1,46 +1,65 @@
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(25vh);
+    }
+}
+
 .user-info {
     border-radius: $border-radius-sm;
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
-    @include desktop{
+
+    @include desktop {
         width: 224px;
         height: auto;
     }
+
     -webkit-box-shadow: $box-shadow-sm;
-            box-shadow: $box-shadow-sm;
+    box-shadow: $box-shadow-sm;
 
-    -webkit-transition: -webkit-transform .4s ease;
+    animation-name: fade-in;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    backface-visibility: hidden;
 
-    transition: -webkit-transform .4s ease;
-
-    -o-transition: transform .4s ease;
-
-    transition: transform .4s ease;
-
-    transition: transform .4s ease, -webkit-transform .4s ease;
-    &:hover{
-        -webkit-transform: translateY(-20px);
-            -ms-transform: translateY(-20px);
-                transform: translateY(-20px);
+    view-timeline-name: --fade-in-card;
+    animation-timeline: --fade-in-card;
+    animation-range: 20% 60%;
+    
+    &:nth-child(2) {
+        animation-range: 25% 60%;
     }
 
-    &__showcase{
+    &:nth-child(3) {
+        animation-range: 30% 60%;
+    }
+
+    &:nth-child(4) {
+        animation-range: 35% 60%;
+    }
+
+
+    &__showcase {
         border-radius: $border-radius-sm;
     }
-    &__avatar{
-        @include desktop{
+
+    &__avatar {
+        @include desktop {
             width: 44px;
             height: auto;
         }
     }
+
     &__profile {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-column-gap: $spacing-xs;
-           -moz-column-gap: $spacing-xs;
-                column-gap: $spacing-xs;
+        -moz-column-gap: $spacing-xs;
+        column-gap: $spacing-xs;
         font-weight: 400;
         line-height: $line-height-md;
         padding: $spacing-md;

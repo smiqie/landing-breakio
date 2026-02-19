@@ -19,6 +19,14 @@
         line-height: $line-height-lg;
         color: $color-text-primary;
         letter-spacing: $letter-spacing-normal;
+        @include hover{
+            color: $color-primary-light;
+        }
+        @media (hover: hover){
+            &:active{
+                color: $color-primary-dark;
+            }
+        }
     }
     &__nav-menu{
         display: -webkit-box;

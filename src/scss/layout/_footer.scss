@@ -47,8 +47,13 @@
         @include tablet{
             padding-block: $spacing-xs;
         }
-        &:visited{
-            color: $color-text-secondary;
+        @include hover{
+            color: $color-primary-light;
+        }
+        @media (hover: hover){
+            &:active{
+                color: $color-primary-dark;
+            }
         }
     }
     &__bottom-block{

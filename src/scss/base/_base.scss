@@ -1,47 +1,44 @@
 *,
 *::after,
-*::before{
+*::before {
     border: none; // !
     outline: none;
-}
-
-*,
-*::after,
-*::before{
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
 }
-ul{
+
+ul {
     list-style: none;
 }
-img{
+
+img {
     display: block;
     max-width: 100%;
     height: auto;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
 
-/**
-  Курсор-рука при наведении на элемент
- */
-button, 
-label{
-   cursor: pointer;
+
+a {
+    cursor: pointer;
 }
 
-/**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
- */
-svg * {
-    transition-property: fill, stroke;
+button {
+    cursor: default;
+}
+
+
+a:visited {
+    color: inherit;
 }
