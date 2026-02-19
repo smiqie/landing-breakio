@@ -1,26 +1,27 @@
-.faq{
-    background-color: $color-bg-secondary;
-    padding-block: $section-padding-y;
-    @include tablet{
-        padding-block: $spacing-4xl;
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
+
+.faq {
+    background-color: vars.$color-bg-secondary;
+    padding-block: vars.$section-padding-y;
+
+    @include media.tablet {
+        padding-block: vars.$spacing-4xl;
     }
-    &__container{
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    &__container {
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-    &__title{
-        margin-bottom: $spacing-5xl;
-        @include tablet{
-            margin-bottom: $spacing-3xl;
+
+    &__title {
+        margin-bottom: vars.$spacing-5xl;
+
+        @include media.tablet {
+            margin-bottom: vars.$spacing-3xl;
         }
+
         max-width: 900px;
         text-align: center;
     }

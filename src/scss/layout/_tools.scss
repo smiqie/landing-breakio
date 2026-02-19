@@ -1,39 +1,31 @@
-.tools {
-    padding-block: $section-padding-y;
-    @include tablet{
-        padding-block: $spacing-4xl;
-    }
-    background-color: $color-bg-primary;
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
 
-    &__container{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+.tools {
+    padding-block: vars.$section-padding-y;
+
+    @include media.tablet {
+        padding-block: vars.$spacing-4xl;
     }
-    &__info-block {
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    background-color: vars.$color-bg-primary;
+
+    &__container {
         display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-flow: row wrap;
-                flex-flow: row wrap;
-        gap: $spacing-3xl;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__info-block {
+        display: flex;
+        flex-flow: row wrap;
+        gap: vars.$spacing-3xl;
+        justify-content: center;
     }
 
     &__title {
         max-width: 900px;
         text-align: center;
-        margin-bottom: $spacing-3xl;
+        margin-bottom: vars.$spacing-3xl;
     }
 }

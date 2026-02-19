@@ -1,96 +1,93 @@
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
+@use "./../abstracts/mixins";
 
-.footer{
-    background-color: $color-bg-primary;
-    &__links-block{
-        padding-block: $spacing-3xl;
+.footer {
+    background-color: vars.$color-bg-primary;
+
+    &__links-block {
+        padding-block: vars.$spacing-3xl;
     }
-    &__nav-menu{
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    &__nav-menu {
         display: flex;
         justify-content: center;
-        -webkit-column-gap: $spacing-3xl;
-           -moz-column-gap: $spacing-3xl;
-                column-gap: $spacing-3xl;
-        @include tablet{
+        -moz-column-gap: vars.$spacing-3xl;
+        column-gap: vars.$spacing-3xl;
+
+        @include media.tablet {
             flex-wrap: wrap;
-            row-gap: $spacing-lg;
+            row-gap: vars.$spacing-lg;
         }
     }
-    &__column{
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    &__column {
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        flex-direction: column;
 
         min-width: 170px;
-        @include desktop{
+
+        @include media.desktop {
             min-width: 110px;
             max-width: 110px;
         }
 
-        font-size: $font-size-xs;
-        color: $color-text-secondary;
+        font-size: vars.$font-size-xs;
+        color: vars.$color-text-secondary;
     }
-    &__title{
+
+    &__title {
         font-weight: 500;
-        line-height: $line-height-sm;
-        padding-block: $spacing-sm;
+        line-height: vars.$line-height-sm;
+        padding-block: vars.$spacing-sm;
     }
-    &__link{
+
+    &__link {
         font-weight: 400;
-        line-height: $line-height-md;
-        padding-block: $spacing-sm;
-        @include tablet{
-            padding-block: $spacing-xs;
+        line-height: vars.$line-height-md;
+        padding-block: vars.$spacing-sm;
+
+        @include media.tablet {
+            padding-block: vars.$spacing-xs;
         }
-        @include hover{
-            color: $color-primary-light;
+
+        @include mixins.hover {
+            color: vars.$color-primary-light;
         }
-        @media (hover: hover){
-            &:active{
-                color: $color-primary-dark;
+
+        @media (hover: hover) {
+            &:active {
+                color: vars.$color-primary-dark;
             }
         }
     }
-    &__bottom-block{
-        padding-block: $spacing-xl;
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    &__bottom-block {
+        padding-block: vars.$spacing-xl;
         display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-        -webkit-padding-end: $spacing-3xl;
-                padding-inline-end: $spacing-3xl;
+        justify-content: space-between;
+        -webkit-padding-end: vars.$spacing-3xl;
+        padding-inline-end: vars.$spacing-3xl;
     }
-    &__info{
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    &__info {
         display: flex;
-        -webkit-column-gap: $spacing-xxs;
-           -moz-column-gap: $spacing-xxs;
-                column-gap: $spacing-xxs;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -moz-column-gap: vars.$spacing-xxs;
+        column-gap: vars.$spacing-xxs;
+        align-items: center;
     }
-    &__copyright{
-        color: $color-text-secondary;
+
+    &__copyright {
+        color: vars.$color-text-secondary;
         font-weight: 400;
-        font-size: $font-size-xs;
-        @include fluid-text(13, 14);
-        line-height: $line-height-md;
+        font-size: vars.$font-size-xs;
+        @include mixins.fluid-text(13, 14);
+        line-height: vars.$line-height-md;
     }
-    &__socials{
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    &__socials {
         display: flex;
-        -webkit-column-gap: $spacing-md;
-           -moz-column-gap: $spacing-md;
-                column-gap: $spacing-md;
+        -moz-column-gap: vars.$spacing-md;
+        column-gap: vars.$spacing-md;
     }
 }

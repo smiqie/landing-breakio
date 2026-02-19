@@ -1,18 +1,36 @@
 *,
 *::after,
 *::before {
-    border: none; // !
+    border: none;
     outline: none;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
 }
 
 a {
     text-decoration: none;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
+a:visited {
+    color: inherit;
+}
+
+button,
+label,
+a {
+    cursor: pointer;
+}
+
+button[aria-disabled="true"] {
+    cursor: not-allowed;
 }
 
 ul {
@@ -23,22 +41,4 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-
-a {
-    cursor: pointer;
-}
-
-button {
-    cursor: default;
-}
-
-
-a:visited {
-    color: inherit;
 }

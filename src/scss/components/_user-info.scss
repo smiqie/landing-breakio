@@ -1,3 +1,14 @@
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
+@use "./../abstracts/mixins";
+
+@-webkit-keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(25vh);
+    }
+}
+
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -6,24 +17,29 @@
 }
 
 .user-info {
-    border-radius: $border-radius-sm;
+    border-radius: vars.$border-radius-sm;
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
 
-    @include desktop {
+    @include media.desktop {
         width: 224px;
         height: auto;
     }
 
-    -webkit-box-shadow: $box-shadow-sm;
-    box-shadow: $box-shadow-sm;
+    box-shadow: vars.$box-shadow-sm;
 
-    animation-name: fade-in;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: both;
-    backface-visibility: hidden;
+    -webkit-animation-name: fade-in;
+
+            animation-name: fade-in;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
 
     view-timeline-name: --fade-in-card;
     animation-timeline: --fade-in-card;
@@ -43,37 +59,34 @@
 
 
     &__showcase {
-        border-radius: $border-radius-sm;
+        border-radius: vars.$border-radius-sm;
     }
 
     &__avatar {
-        @include desktop {
+        @include media.desktop {
             width: 44px;
             height: auto;
         }
     }
 
     &__profile {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-column-gap: $spacing-xs;
-        -moz-column-gap: $spacing-xs;
-        column-gap: $spacing-xs;
+        -moz-column-gap: vars.$spacing-xs;
+             column-gap: vars.$spacing-xs;
         font-weight: 400;
-        line-height: $line-height-md;
-        padding: $spacing-md;
+        line-height: vars.$line-height-md;
+        padding: vars.$spacing-md;
     }
 
     &__work {
-        color: $color-text-primary;
-        font-size: $font-size-xs;
-        @include fluid-text(15, 16);
+        color: vars.$color-text-primary;
+        font-size: vars.$font-size-xs;
+        @include mixins.fluid-text(15, 16);
     }
 
     &__credit {
-        color: $color-text-secondary;
-        font-size: $font-size-xxs;
-        @include fluid-text(14, 15);
+        color: vars.$color-text-secondary;
+        font-size: vars.$font-size-xxs;
+        @include mixins.fluid-text(14, 15);
     }
 }

@@ -1,10 +1,12 @@
-* {
+@use "./../abstracts/variables" as vars;
+
+.focus-ring {
     &:focus:not(:focus-visible) {
         outline: none;
     }
 
     &:focus-visible {
-        outline: $outline-width solid $color-focus;
-        outline-offset: $outline-offset;
+        outline: vars.$outline-width solid vars.$color-focus;
+        outline-offset: vars.$outline-offset;
     }
 }

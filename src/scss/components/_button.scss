@@ -1,56 +1,58 @@
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
+@use "./../abstracts/mixins";
+
 .button {
-    background-color: $color-primary;
-    border-radius: $border-radius-md;
+    background-color: vars.$color-primary;
+    border-radius: vars.$border-radius-md;
 
-    padding: $spacing-sm $spacing-2xl;
+    padding: vars.$spacing-sm vars.$spacing-2xl;
 
-    @include tablet {
-        padding: $spacing-sm $spacing-xl;
+    @include media.tablet {
+        padding: vars.$spacing-sm vars.$spacing-xl;
     }
 
-    @include mobile {
-        padding: $spacing-xs $spacing-lg;
-        border-radius: $border-radius-sm;
+    @include media.mobile {
+        padding: vars.$spacing-xs vars.$spacing-lg;
+        border-radius: vars.$border-radius-sm;
     }
 
-    color: $color-text-white;
-    font-size: $font-size-xs;
-    @include fluid-text(14, 16);
-    line-height: $line-height-lg;
-    letter-spacing: $letter-spacing-normal;
+    color: vars.$color-text-white;
+    font-size: vars.$font-size-xs;
+    @include mixins.fluid-text(14, 16);
+    line-height: vars.$line-height-lg;
+    letter-spacing: vars.$letter-spacing-normal;
     -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 
     &--big {
-        border-radius: $border-radius-lg;
-        padding: $spacing-lg $spacing-3xl;
+        border-radius: vars.$border-radius-lg;
+        padding: vars.$spacing-lg vars.$spacing-3xl;
 
-        @include tablet {
-            padding: $spacing-md $spacing-2xl;
+        @include media.tablet {
+            padding: vars.$spacing-md vars.$spacing-2xl;
         }
 
-        @include mobile {
-            border-radius: $border-radius-md;
+        @include media.mobile {
+            border-radius: vars.$border-radius-md;
         }
 
-        font-size: $font-size-lg;
-        @include fluid-text(18, 24);
+        font-size: vars.$font-size-lg;
+        @include mixins.fluid-text(18, 24);
     }
 
-    transition: 
-        transform .1s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%),
-        background-color .3s linear;
+    transition: transform .1s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%),
+    background-color .3s linear;
 
-    @include hover {
-        background-color: $color-primary-dark;
+    @include mixins.hover {
+        background-color: vars.$color-primary-dark;
         transform: translateY(-2px);
     }
 
     @media (hover: hover) {
         &:active {
-            background-color: $color-primary-light;
+            background-color: vars.$color-primary-light;
             transform: translateY(2px);
         }
     }

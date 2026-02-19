@@ -1,10 +1,9 @@
-// Dektop First
+// Desktop First
 
-$desktop: 1280px; // completed
-$tablet: 1023px; // completed
-$mobile: 767px; // +- completed
-$mobile-s: 480px; // -
-
+$desktop: 1280px;
+$tablet: 1023px;
+$mobile: 767px;
+$mobile-s: 480px;
 
 @mixin desktop {
     @media(max-width: $desktop) {
@@ -23,6 +22,7 @@ $mobile-s: 480px; // -
         @content;
     }
 }
+
 @mixin mobile-s {
     @media(max-width: $mobile-s) {
         @content;

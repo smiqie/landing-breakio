@@ -1,56 +1,61 @@
-.slide{
-    -webkit-box-shadow: $box-shadow-sm;
-            box-shadow: $box-shadow-sm;
-    display: -webkit-box;
-    display: -ms-flexbox;
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
+@use "./../abstracts/mixins";
+
+.slide {
+    box-shadow: vars.$box-shadow-sm;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: $spacing-3xl;
-    @include tablet{
-        padding: $spacing-2xl;
+    flex-direction: column;
+    align-items: center;
+    padding: vars.$spacing-3xl;
+
+    @include media.tablet {
+        padding: vars.$spacing-2xl;
     }
-    color: $color-text-primary;
+
+    color: vars.$color-text-primary;
     max-width: 500px;
-    &__title{
-        font-size: $font-size-xl;
-        @include fluid-text(22, 32);
+
+    &__title {
+        font-size: vars.$font-size-xl;
+        @include mixins.fluid-text(22, 32);
         font-weight: 700;
-        line-height: $line-height-sm;
-        margin-bottom: $spacing-2xl;
+        line-height: vars.$line-height-sm;
+        margin-bottom: vars.$spacing-2xl;
         max-width: 630px;
     }
-    &__text{
-        font-size: $font-size-lg;
-        @include fluid-text(18, 24);
+
+    &__text {
+        font-size: vars.$font-size-lg;
+        @include mixins.fluid-text(18, 24);
         font-weight: 400;
-        line-height: $line-height-xl;
+        line-height: vars.$line-height-xl;
         max-width: 630px;
-        margin-bottom: $spacing-4xl;
-        @include tablet{
-            margin-bottom: $spacing-2xl;
+        margin-bottom: vars.$spacing-4xl;
+
+        @include media.tablet {
+            margin-bottom: vars.$spacing-2xl;
         }
+
         text-align: center;
     }
-    &__avatar{
-        margin-bottom: $spacing-md;
+
+    &__avatar {
+        margin-bottom: vars.$spacing-md;
     }
-    &__name{
-        font-size: $font-size-sm;
-        @include fluid-text(16, 18);
+
+    &__name {
+        font-size: vars.$font-size-sm;
+        @include mixins.fluid-text(16, 18);
         font-weight: 400;
-        line-height: $line-height-xl;
+        line-height: vars.$line-height-xl;
     }
-    &__role{
-        color: $color-text-secondary;
-        @include fluid-text(14, 16);
-        font-size: $font-size-xs;
+
+    &__role {
+        color: vars.$color-text-secondary;
+        @include mixins.fluid-text(14, 16);
+        font-size: vars.$font-size-xs;
         font-weight: 400;
-        line-height: $line-height-md;
+        line-height: vars.$line-height-md;
     }
 }

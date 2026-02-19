@@ -1,42 +1,43 @@
-.header{
-    padding-block: $spacing-xl;
-    background-color: $color-bg-primary;
-    &__list{
-        display: -webkit-box;
-        display: -ms-flexbox;
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
+@use "./../abstracts/mixins";
+
+.header {
+    padding-block: vars.$spacing-xl;
+    background-color: vars.$color-bg-primary;
+
+    &__list {
         display: flex;
-        gap: $spacing-md;
-        @include mobile{ 
-            gap: $spacing-xs;
+        gap: vars.$spacing-md;
+
+        @include media.mobile {
+            gap: vars.$spacing-xs;
         }
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+
+        align-items: center;
     }
-    &__link{
-        font-size: $font-size-xs;
-        @include fluid-text(14, 16);
-        line-height: $line-height-lg;
-        color: $color-text-primary;
-        letter-spacing: $letter-spacing-normal;
-        @include hover{
-            color: $color-primary-light;
+
+    &__link {
+        font-size: vars.$font-size-xs;
+        @include mixins.fluid-text(14, 16);
+        line-height: vars.$line-height-lg;
+        color: vars.$color-text-primary;
+        letter-spacing: vars.$letter-spacing-normal;
+
+        @include mixins.hover {
+            color: vars.$color-primary-light;
         }
-        @media (hover: hover){
-            &:active{
-                color: $color-primary-dark;
+
+        @media (hover: hover) {
+            &:active {
+                color: vars.$color-primary-dark;
             }
         }
     }
-    &__nav-menu{
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    &__nav-menu {
         display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+        align-items: center;
+        justify-content: space-between;
     }
 }

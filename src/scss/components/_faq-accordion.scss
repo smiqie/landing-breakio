@@ -1,91 +1,73 @@
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
+@use "./../abstracts/mixins";
+
 .faq-accordion {
-
-    display: -webkit-box;
-
-    display: -ms-flexbox;
-
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    row-gap: $spacing-xl;
+    flex-direction: column;
+    row-gap: vars.$spacing-xl;
 
     &__faq-item {
-        -webkit-box-shadow: $box-shadow-md;
-                box-shadow: $box-shadow-md;
-        background-color: $color-bg-primary;
-        display: -webkit-box;
-        display: -ms-flexbox;
+        box-shadow: vars.$box-shadow-md;
+        background-color: vars.$color-bg-primary;
         display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        padding: $spacing-2xl;
-        @include tablet{
-            padding: $spacing-xl;
+        justify-content: space-between;
+        align-items: center;
+        -moz-column-gap: vars.$spacing-xl;
+        column-gap: vars.$spacing-xl;
+        padding: vars.$spacing-2xl vars.$spacing-5xl;
+
+        @include media.tablet {
+            padding: vars.$spacing-xl vars.$spacing-2xl;
         }
-        max-width: 1280px;
-        min-width: 840px;
-        @include tablet{
-            max-width: 700px;
-            min-width: 500px;
+
+        @include media.mobile {
+            padding: vars.$spacing-lg;
+            -moz-column-gap: vars.$spacing-md;
+            column-gap: vars.$spacing-md;
         }
     }
 
     &__btn {
         min-height: 46px;
         min-width: 46px;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        background-color: $color-bg-purple-pale;
+        align-items: center;
+        justify-content: center;
+        background-color: vars.$color-bg-purple-pale;
         padding: 0;
-        -o-transition: all 0.4s ease;
         transition: all 0.4s ease;
-        -webkit-transition: all 0.4s ease;
-        border-radius: $border-radius-md;
+        border-radius: vars.$border-radius-md;
 
-        @include hover{
-            -webkit-filter: saturate(200%) blur(0.5px);
-                    filter: saturate(200%) blur(0.5px);
-            background-color: $color-hover-light;
+        @include mixins.hover {
+            filter: saturate(200%) blur(0.5px);
+            background-color: vars.$color-hover-light;
         }
-        @media (hover: hover){
-            &:active{
-                background-color: $color-active-light;
+
+        @media (hover: hover) {
+            &:active {
+                background-color: vars.$color-active-light;
             }
         }
 
         &--down {
-            -webkit-transform: rotate(0deg);
-                -ms-transform: rotate(0deg);
-                    transform: rotate(0deg);
+            transform: rotate(0deg);
         }
 
         &--up {
-            -webkit-transform: rotate(180deg);
-                -ms-transform: rotate(180deg);
-                    transform: rotate(180deg);
+            transform: rotate(180deg);
         }
     }
+
     &__question {
-        color: $color-text-primary;
+        color: vars.$color-text-primary;
         font-weight: 500;
-        line-height: $line-height-sm;
-        font-size: $font-size-md;
-        @include tablet{
-            font-size: $font-size-sm;
-            letter-spacing: $letter-spacing-normal;
+        line-height: vars.$line-height-sm;
+        font-size: vars.$font-size-md;
+
+        @include media.tablet {
+            font-size: vars.$font-size-sm;
+            letter-spacing: vars.$letter-spacing-normal;
         }
     }
 }

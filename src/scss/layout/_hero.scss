@@ -1,34 +1,34 @@
-.hero{
-    padding-block: $spacing-4xl $section-padding-y;
-    @include tablet{
-        padding-block-start: $spacing-3xl;
-        padding-block-end: $spacing-2xl;
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
+
+.hero {
+    padding-block: vars.$spacing-4xl vars.$section-padding-y;
+
+    @include media.tablet {
+        -webkit-padding-before: vars.$spacing-3xl;
+        padding-block-start: vars.$spacing-3xl;
+        -webkit-padding-after: vars.$spacing-2xl;
+        padding-block-end: vars.$spacing-2xl;
     }
-    background-color: $color-bg-primary;
-    &__title{
-        margin-bottom: $spacing-xl;
+
+    background-color: vars.$color-bg-primary;
+
+    &__title {
+        margin-bottom: vars.$spacing-xl;
         text-align: center;
     }
-    &__form-wrapper{
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    &__form-wrapper {
         display: flex;
         align-items: center;
-        -webkit-column-gap: $spacing-md;
-           -moz-column-gap: $spacing-md;
-                column-gap: $spacing-md;
-        margin-bottom: $spacing-5xl;
+        -moz-column-gap: vars.$spacing-md;
+        column-gap: vars.$spacing-md;
+        margin-bottom: vars.$spacing-5xl;
     }
-    &__container{
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    &__container {
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
 }

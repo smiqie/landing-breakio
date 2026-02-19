@@ -1,58 +1,57 @@
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
 
-.form{
+.form {
     position: relative;
-    font-size: $font-size-lg;
-    @include tablet{
-        font-size: $font-size-md;
+    font-size: vars.$font-size-lg;
+
+    @include media.tablet {
+        font-size: vars.$font-size-md;
     }
-    line-height: $line-height-xl;
-    &__label{
+
+    line-height: vars.$line-height-xl;
+
+    &__label {
         position: absolute;
-        top: 13px;
-        left: 24px;
-        color: $color-text-secondary;
-        -o-transition: all .5s ease-in-out 0s;
+        top: 50%;
+        left: 35%;
+        translate: -50% -50%;
+        color: vars.$color-text-secondary;
         transition: all .5s ease-in-out 0s;
-        -webkit-transition: all .5s ease-in-out 0s;
-        
         -webkit-user-select: none;
-        
-           -moz-user-select: none;
-        
-            -ms-user-select: none;
-        
-                user-select: none;
+        -moz-user-select: none;
+        user-select: none;
         pointer-events: none;
     }
-    &__input{
-        border: 1px solid $color-border;
-        border-radius: $border-radius-lg;
-        padding: $spacing-sm $spacing-xl;
+
+    &__input {
+        border: 1px solid vars.$color-border;
+        border-radius: vars.$border-radius-lg;
+        padding: vars.$spacing-sm vars.$spacing-xl;
         max-width: 476px;
-        @include tablet{
+
+        @include media.tablet {
             max-width: 456px;
         }
 
-        color: $color-text-secondary;
-        &:focus-visible{
-            outline: $outline-width solid $color-focus;
-            outline-offset: $outline-offset-form;
+        color: vars.$color-text-secondary;
+
+        &:focus-visible {
+            outline: vars.$outline-width solid vars.$color-focus;
+            outline-offset: vars.$outline-offset-form;
         }
     }
-    &__input:not(:-moz-placeholder-shown) + label{
-        top: 73px;
-        left: 14px;
-        font-size: $font-size-sm;
+
+    &__input:not(:-moz-placeholder-shown)+label {
+        top: 140%;
+        left: 10%;
+        font-size: vars.$font-size-sm;
     }
-    &__input:not(:-ms-input-placeholder) + label{
-        top: 73px;
-        left: 14px;
-        font-size: $font-size-sm;
+
+    &__input:not(:placeholder-shown)+label {
+        top: 140%;
+        left: 10%;
+        font-size: vars.$font-size-sm;
     }
-    &__input:not(:placeholder-shown) + label{
-        top: 73px;
-        left: 14px;
-        font-size: $font-size-sm;
-    }
-    
+
 }

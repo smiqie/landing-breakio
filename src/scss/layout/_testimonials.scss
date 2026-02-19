@@ -1,37 +1,36 @@
-.testimonials{
-    padding-block: $section-padding-y;
-    @include tablet{
-        padding-block: $spacing-4xl;
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
+
+.testimonials {
+    padding-block: vars.$section-padding-y;
+
+    @include media.tablet {
+        padding-block: vars.$spacing-4xl;
     }
-    background-color: $color-bg-primary;
-    &__container{
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    background-color: vars.$color-bg-primary;
+
+    &__container {
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-    &__title{
+
+    &__title {
         text-align: center;
-        margin-bottom: $spacing-5xl;
+        margin-bottom: vars.$spacing-5xl;
         max-width: 900px;
     }
-    &__info-block{
-        display: -webkit-box;
-        display: -ms-flexbox;
+
+    &__info-block {
         display: flex;
-        -webkit-column-gap: $spacing-xl;
-           -moz-column-gap: $spacing-xl;
-                column-gap: $spacing-xl;
-        @include tablet{
+        -moz-column-gap: vars.$spacing-xl;
+        column-gap: vars.$spacing-xl;
+
+        @include media.tablet {
             flex-wrap: wrap;
             justify-content: center;
-            gap: $spacing-2xl $spacing-4xl;
+            gap: vars.$spacing-2xl vars.$spacing-4xl;
         }
     }
 }

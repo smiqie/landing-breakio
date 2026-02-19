@@ -1,54 +1,54 @@
-.slider{
-    &__btn{
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
+@use "./../abstracts/mixins";
+
+.slider {
+    &__btn {
         min-height: 48px;
         min-width: 48px;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        -webkit-box-shadow: $box-shadow-sm;
-                box-shadow: $box-shadow-sm;
-        border-radius: $border-radius-xl;
-        background-color: $color-bg-purple-pale;
+        align-items: center;
+        justify-content: center;
+        box-shadow: vars.$box-shadow-sm;
+        border-radius: vars.$border-radius-xl;
+        background-color: vars.$color-bg-purple-pale;
         padding: 0;
         transition: all 0.4s ease;
-        @include hover{
-            background-color: $color-hover-light;
+
+        @include mixins.hover {
+            background-color: vars.$color-hover-light;
         }
-        @media (hover: hover){
-            &:active{
-                background-color: $color-active-light;
+
+        @media (hover: hover) {
+            &:active {
+                background-color: vars.$color-active-light;
             }
         }
-        &--left{
+
+        &--left {
             position: absolute;
-            -webkit-transform: translateY(-50%) rotate(180deg);
-                -ms-transform: translateY(-50%) rotate(180deg);
-                    transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) rotate(180deg);
             top: 50%;
-            left: -100px;
-            @include tablet{
-                left: -70px;
+            left: -20%;
+
+            @include media.tablet {
+                left: -15%;
             }
         }
-        &--right{
+
+        &--right {
             position: absolute;
-            -webkit-transform: translateY(-50%) rotate(0deg);
-                -ms-transform: translateY(-50%) rotate(0deg);
-                    transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
             top: 50%;
-            right: -100px;
-            @include tablet{
-                right: -70px;
+            right: -20%;
+
+            @include media.tablet {
+                right: -15%;
             }
         }
     }
-    &__track{
+
+    &__track {
         position: relative;
     }
 }

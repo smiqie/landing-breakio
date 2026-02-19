@@ -1,36 +1,33 @@
-// VARIABLES
-@import "./abstracts/variables",
-        "./abstracts/media",
-        "./abstracts/mixins";
+// ABSTRACTS
+@use "./abstracts/variables";
+@use "./abstracts/mixins";
+@use "./abstracts/media";
 
 // BASE
-@import
-    "./base/normalize",
-    "./base/reset",
-    "./base/base",
-    "./base/utilities",
-    "./base/typography";
+@use "./base/normalize";
+@use "./base/reset";
+@use "./base/base";
+@use "./base/utilities";
+@use "./base/typography";
 
 // LAYOUT
-@import
-    "./layout/header",
-    "./layout/hero",
-    "./layout/intro",
-    "./layout/testimonials",
-    "./layout/feedback",
-    "./layout/tools",
-    "./layout/faq.scss",
-    "./layout/footer";
+@use "./layout/header";
+@use "./layout/hero";
+@use "./layout/intro";
+@use "./layout/testimonials";
+@use "./layout/feedback";
+@use "./layout/tools";
+@use "./layout/faq";
+@use "./layout/footer";
 
 
 // COMPONENTS
-@import 
-    "./components/button",
-    "./components/title",
-    "./components/form",
-    "./components/focus-ring",
-    "./components/user-info",
-    "./components/slide",
-    "./components/slider",
-    "./components/feature-card",
-    "./components/faq-accordion.scss";
+@use "./components/button";
+@use "./components/title";
+@use "./components/form";
+@use "./components/focus-ring";
+@use "./components/user-info";
+@use "./components/slide";
+@use "./components/slider";
+@use "./components/feature-card";
+@use "./components/faq-accordion";

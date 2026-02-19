@@ -1,28 +1,36 @@
+@use "./../abstracts/variables" as vars;
+@use "./../abstracts/media";
+@use "./../abstracts/mixins";
 
-.feature-card{
+.feature-card {
     max-width: 360px;
-    @include tablet{
+
+    @include media.tablet {
         max-width: 240px;
     }
-    @include mobile{
+
+    @include media.mobile {
         max-width: 210px;
     }
-    &__icon{
-        margin-bottom: $spacing-md;
+
+    &__icon {
+        margin-bottom: vars.$spacing-md;
     }
-    &__primary-text{
+
+    &__primary-text {
         font-weight: 700;
-        font-size: $font-size-lg;
-        @include fluid-text(18, 24);
-        line-height: $line-height-sm;
-        color: $color-text-tertiary;
-        margin-bottom: $spacing-md;
+        font-size: vars.$font-size-lg;
+        @include mixins.fluid-text(18, 24);
+        line-height: vars.$line-height-sm;
+        color: vars.$color-text-tertiary;
+        margin-bottom: vars.$spacing-md;
     }
-    &__secondary-text{
+
+    &__secondary-text {
         font-weight: 400;
-        font-size: $font-size-sm;
-        @include fluid-text(15, 18);
-        line-height: $line-height-xl;
-        color: $color-text-secondary;
+        font-size: vars.$font-size-sm;
+        @include mixins.fluid-text(15, 18);
+        line-height: vars.$line-height-xl;
+        color: vars.$color-text-secondary;
     }
 }
