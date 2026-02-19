@@ -2,6 +2,6 @@
 
 Responsive landing page for a mindfulness app.
 
-**Stack:** HTML5, SCSS, BEM, PostCSS + Autoprefixer
+**Stack:** HTML5, SCSS, BEM
 
 **Features:** fluid typography, scroll-driven animations, accessible markup
