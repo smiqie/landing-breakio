@@ -6,4 +6,4 @@ Responsive landing page for a mindfulness app.
 
 **Features:** fluid typography, scroll-driven animations, accessible markup
 
-> ⚠️⚠️⚠️ BEST VIEWED IN **GOOGLE CHROME** ⚠️⚠️⚠️
+> ⚠️⚠️⚠️ BEST VIEWED IN **CHROMIUM** ⚠️⚠️⚠️
